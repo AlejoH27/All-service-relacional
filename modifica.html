@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Modificar</title>
+ <script type="module"
+   src="./lib/js/custom/campo-id-oculto.js">
+   </script>
+ <script type="module"
+   src="./lib/js/custom/hipervinculo-cancelar-index.js">
+   </script>
+ <script type="module"
+   src="./lib/js/custom/boton-guardar.js">
+   </script>
+ <script type="module"
+   src="./lib/js/custom/boton-eliminar.js">
+   </script>
+ <script type="module"
+   src="./lib/js/custom/indica-campos-obligatorios.js">
+   </script>
+  <script type="module"
+  src="./js/custom/campo-nombre-cargando.js">
+  </script>
+ <script type="module"
+   src="./js/custom/campo-cue-cargando.js">
+   </script>
+ <script type="module"
+   src="./js/custom/campo-roles.js">
+   </script>
+  <script type="module"
+    src="./js/custom/campo-match-cargando.js">
+    </script>
+</head>
+
+<body>
+ <form id="forma">
+  <h1>Modificar</h1>
+  <campo-id-oculto>
+  </campo-id-oculto>
+  <p>
+   <hipervinculo-cancelar-index>
+   </hipervinculo-cancelar-index>
+  </p>
+  <campo-nombre-cargando></campo-nombre-cargando>
+  <campo-cue-cargando></campo-cue-cargando>
+  <campo-match-cargando></campo-match-cargando>
+  <campo-roles></campo-roles>
+  <indica-campos-obligatorios>
+  </indica-campos-obligatorios>
+  <p>
+   <boton-guardar></boton-guardar>
+   <boton-eliminar>
+   </boton-eliminar>
+  </p>
+ </form>
+
+ <script type="module">
+  import {
+   ejecuta
+  } from "./lib/js/ejecuta.js"
+  import {
+   submit
+  } from "./lib/js/submit.js"
+  import {
+   muestraError
+  } from "./lib/js/muestraError.js"
+  import {
+   parametrosDePagina
+  } from "./lib/js/parametrosDePagina.js"
+  import {
+   saltaAIndex
+  } from "./lib/js/saltaAIndex.js"
+  import {
+   muestraNumero
+  } from "./lib/js/muestraNumero.js"
+  import {
+   muestraTexto
+  } from "./lib/js/muestraTexto.js"
+  import {
+   escuchaEventosModifica
+  } from "./lib/js/escuchaEventosModifica.js"
+  import {
+   confirmaEliminar
+  } from "./lib/js/confirmaEliminar.js"
+  import {
+   muestraRender
+  } from "./lib/js/muestraRender.js"
+
+  const parametros =
+   parametrosDePagina()
+  preparaVista()
+
+  async function preparaVista() {
+   try {
+    const json =
+     await buscaEnElServidor()
+     muestraRender(roles,
+      json.render)
+    muestra(json.modelo)
+    escuchaEventosModifica(forma,
+     modifica, btnElimina, elimina)
+   } catch (e) {
+    muestraError(e)
+    saltaAIndex()
+   }
+  }
+
+  async function
+   buscaEnElServidor() {
+   return await ejecuta(fetch(
+    "srv/SrvUsuarioBusca.php?"
+    + parametros))
+  }
+
+  function muestra(modelo) {
+   muestraNumero(forma.id,
+    modelo.id)
+   muestraTexto(forma.nombre,
+    modelo.nombre)
+   muestraTexto(forma.cue,
+    modelo.cue)
+   muestraTexto(forma.match,
+    modelo.match)
+  }
+
+  /** @param {Event} evt */
+  async function modifica(evt) {
+   try {
+    const m = await submit(evt,
+     "srv/SrvUsuarioModifica.php",
+     forma)
+    saltaAIndex()
+   } catch (e) {
+    muestraError(e)
+   }
+  }
+
+  async function elimina() {
+   try {
+    if (confirmaEliminar()) {
+     const json = await ejecuta(
+      fetch(
+       "srv/SrvUsuarioElimina.php?"
+       + parametros))
+     saltaAIndex()
+    }
+   } catch (e) {
+    muestraError(e)
+   }
+  }
+ </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+*{
+  margin: 0px;
+}
+
+.logo-pagina{
+  width: 200px;
+  height: auto;
+}
+
+/**Estilos de inicio de sesion usuarios**/
+.formu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, .15);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-radius: 25px;
+}
+
+@media (min-width: 990px) {
+  .formu{
+     max-width: 600px;
+  }
+}
