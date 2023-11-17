@@ -102,9 +102,9 @@ body .nav{
      padding: 20px 30px;
 }
 
-body div.container{
-    background: linear-gradient(90deg, rgba(0,0,0,.25) 0%, rgba(255,255,255,.25) 52%, rgba(0,0,0,.25) 97%); 
-  }
+/*body div.container{
+    background: red/*linear-gradient(90deg, rgba(0,0,0,.25) 0%, rgba(255,255,255,.25) 52%, rgba(0,0,0,.25) 97%); 
+  }*/
 
 body h1{
     text-align: center;
@@ -137,4 +137,35 @@ body {
 
 .loader img {
     width: 280px;
+}
+
+.roles{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #000;
+  font-size: 20px;
+}
+
+.usuarios{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #000;
+  font-size: 20px;
+}
+
+.boton-sesion{
+  margin:auto;
+  text-align: center;
+  margin-bottom: 10px;
 }

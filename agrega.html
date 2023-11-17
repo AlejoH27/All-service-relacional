@@ -51,6 +51,12 @@
   <script type="module"
    src="./js/custom/campo-nombre.js">
    </script>
+  <script type="module"
+   src="./js/custom/campo-apellido-paterno.js">
+   </script>
+  <script type="module"
+   src="./js/custom/campo-apellido-materno.js">
+   </script>
  <script type="module"
    src="./js/custom/campo-cue.js">
    </script>
@@ -78,16 +84,10 @@
          <div class="row d_flex">
             <div class="col-md-12">
               <!--<form id="forma" class="formulario-registro-cliente">-->
-
-                
-                <p>
-                 <hipervinculo-cancelar-index>
-                 </hipervinculo-cancelar-index>
-                </p>
               
                 <form id="forma" class="formulario-registro-cliente">
 
-                  <h1>Registro</h1>
+                  <h1 style="text-align:center; padding-top: 10px; padding-bottom: 10px;">Registro</h1>
                   
                   <div class="form-row">
 
@@ -98,18 +98,12 @@
                     
                     <div class="col-md-4 mb-3">
                       <label for="validationServer02">Apellido Paterno</label>
-                      <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Apellido Paterno"  required>
-                      <div class="valid-feedback">
-                        Looks good!
-                      </div>
+                      <campo-apellido-paterno></campo-apellido-paterno>
                     </div>
 
                     <div class="col-md-4 mb-3">
                       <label for="validationServer02">Apellido Materno</label>
-                      <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Apellido Materno" required>
-                      <div class="valid-feedback">
-                        Looks good!
-                      </div>
+                      <campo-apellido-materno></campo-apellido-materno>
                     </div>
                     
                   </div>
@@ -144,6 +138,10 @@
                     </div>
                   </div>
                   <boton-agregar></boton-agregar>
+                  <p>
+                   <hipervinculo-cancelar-index>
+                   </hipervinculo-cancelar-index>
+                  </p>
                   
                 </form>
                 <!--

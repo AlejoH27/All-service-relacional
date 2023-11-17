@@ -5,7 +5,7 @@ export class CampoMatch
   this.style.display = "block"
   this.innerHTML = /* HTML */
    `
-   <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Match" name="match" required>
+   <input type="password" class="form-control is-valid" id="validationServer02" placeholder="Match" name="match" required>
     <div class="valid-feedback">
       Looks good!
     </div>

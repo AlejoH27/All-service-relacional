@@ -4,16 +4,7 @@ export class CampoMatchCargando
  connectedCallback() {
   this.style.display = "block"
   this.innerHTML = /* HTML */
-   `<p>
-     <label>
-      <!-- Usamos cue para que los
-      navegadores no bloqueen la
-      página. -->
-      Contraseña *
-      <input name="match" required
-        value="Cargando&hellip;">
-     </label>
-    </p>`
+   `<h6 class='mb-0'>Match: <span class='text-secondary'> <input name="match" required value="Cargando&hellip;"> </span></h6>`
  }
 
 }

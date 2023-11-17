@@ -24,7 +24,14 @@ extends Servicio
  function implementacion()
  {
   $usuario = new Usuario();
-  $usuario->id = leeEntero("id");
+  $usuario->id = 
+    leeEntero("id");
+  $usuario->nombre = 
+    leeSinEspaciosInFin("nombre");
+  $usuario->apellidoP = 
+    leeSinEspaciosInFin("apellidoP");
+  $usuario->apellidoM =
+    leeSinEspaciosInFin("apellidoM");
   $usuario->cue =
    leeSinEspaciosInFin("cue");
   $usuario->match =

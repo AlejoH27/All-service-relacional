@@ -12,6 +12,8 @@ function usuarioConsultaUsuarioPerfil()
   "SELECT
     U.USU_ID AS usuId,
     U.USU_NOMBRE AS usuNombre,
+    U.USU_APELLIDOP AS usuApellidoP,
+    U.USU_APELLIDOM AS usuApellidoM,
     U.USU_CUE AS usuCue,
     GROUP_CONCAT(R.ROL_ID, ', ')
      AS roles

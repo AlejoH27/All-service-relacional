@@ -13,6 +13,8 @@ function usuarioBusca(int $usuId)
   "SELECT
     USU_ID as id,
     USU_NOMBRE as nombre,
+    USU_APELLIDOP as apellidoP,
+    USU_APELLIDOM as apellidoM,
     USU_CUE as cue,
     USU_MATCH as match
    FROM USUARIO

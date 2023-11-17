@@ -24,6 +24,10 @@ extends Servicio
   $usuario = new Usuario();
   $usuario->nombre =
    leeSinEspaciosInFin("nombre");
+  $usuario->apellidoP =
+   leeSinEspaciosInFin("apellidoP");
+  $usuario->apellidoM =
+   leeSinEspaciosInFin("apellidoM");
   $usuario->cue =
    leeSinEspaciosInFin("cue");
   $usuario->match =

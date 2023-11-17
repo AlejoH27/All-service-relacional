@@ -4,16 +4,8 @@ export class CampoNombreCargando
  connectedCallback() {
   this.style.display = "block"
   this.innerHTML = /* HTML */
-   `<p>
-     <label>
-      <!-- Usamos cue para que los
-      navegadores no bloqueen la
-      página. -->
-      Nombre *
-      <input name="nombre" required
-        value="Cargando&hellip;">
-     </label>
-    </p>`
+   `<h6 class='mb-0'>Nombre: <span class='text-secondary'> <input name="nombre" required value="Cargando&hellip;"> </span></h6>
+     `
  }
 
 }

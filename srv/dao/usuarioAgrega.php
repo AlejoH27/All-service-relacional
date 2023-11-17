@@ -14,12 +14,14 @@ function usuarioAgrega(
  $con->beginTransaction();
  $stmt = $con->prepare(
   "INSERT INTO USUARIO
-    (USU_CUE, USU_MATCH, USU_NOMBRE)
+    (USU_CUE, USU_MATCH, USU_NOMBRE, USU_APELLIDOP, USU_APELLIDOM)
    VALUES
-    (:cue, :match, :nombre)"
+    (:cue, :match, :nombre, :apellidoP, :apellidoM)"
  );
  $stmt->execute([
   ":nombre" => $modelo->nombre,
+  ":apellidoP" => $modelo->apellidoP,
+  ":apellidoM" => $modelo->apellidoM,
   ":cue" => $modelo->cue, 
   ":match"
   => password_hash(

@@ -16,12 +16,18 @@ function usuarioModifica(
  $con->beginTransaction();
  $stmt = $con->prepare(
   "UPDATE USUARIO
-   SET USU_CUE = :cue,
-       USU_MATCH = :match
-   WHERE USU_ID = :id"
+  SET USU_NOMBRE = :nombre,
+      USU_APELLIDOP = :apellidoP,
+      USU_APELLIDOM = :apellidoM,
+      USU_CUE = :cue,
+      USU_MATCH = :match
+  WHERE USU_ID = :id"
  );
  $stmt->execute([
   ":id" => $modelo->id,
+  "nombre" => $modelo->nombre,
+  "apellidoP" => $modelo->apellidoP,
+  "apellidoM" => $modelo->apellidoM,
   ":cue" => $modelo->cue,
   ":match" => $modelo->match
  ]);

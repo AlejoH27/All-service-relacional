@@ -28,14 +28,41 @@ extends Servicio
     ? "<em>-- Sin roles --</em>"
     : htmlentities($modelo->roles);
    $render .=
-    "<li>
+    "<!--<li>
       <p>
  <a href='modifica.html?id=$usuId'>
   <strong>{$usuCue}</strong>
   <br>{$usuNombre}
   <br>{$roles}</a>
       </p>
-     </li>";
+     </li>-->
+     
+<div class='row'>
+     <div class='col-md-4 offset-md-4 profile-card'>
+         <div class='imageE'>
+             <img src='images/empleado.png' alt='Empleado'>
+         </div>
+         <div class='text-data'>
+             <span class='name'>{$usuNombre}</span>
+             <span class='job'>{$usuCue}</span>
+             <span class='job'><b>{$roles}</b></span>
+         </div>
+         <div class='buttons'>
+             <form>
+                 <input type='hidden' name=''>
+                 <button class='button'>Leer más</button>
+             </form>
+             <!--
+             <a href='indexUsu.php?pagina=contactar&id_abogado=''>
+                 <button class='button'>Mensaje</button>
+             </a>-->
+         </div>
+     </div>
+
+ </div>
+
+     
+     ";
   }
   return $render;
  }

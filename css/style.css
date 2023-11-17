@@ -618,6 +618,90 @@ button {
 
 /** end testimonial section **/
 
+/** empleados section **/
+
+.empleados {
+     /*margin-top: 90px;*/
+     padding-top: 150px;
+     padding-bottom: 90px;
+     background: #ededed;
+     /*padding-top: 60px;*/
+}
+
+.empleados .titlepage h2 {
+     color: #232323;
+     padding-bottom: 10px;
+}
+
+.empleados .titlepage span {
+     background-color: #232323;
+}
+
+.empleados_Carousel .carousel-caption {
+     position: inherit;
+}
+
+.empleados_box figure {
+     margin: 0;
+}
+
+.empleados_box figure img {}
+
+.empleados_box {
+     text-align: left;
+     background: #fff;
+     box-shadow: #ddd 0px 0px 10px 0px;
+     padding: 0px 40px 40px 40px;
+}
+
+.empleados_Carousel .test_box .jons {
+     text-align: left;
+     margin-bottom: 4px;
+     margin-left: -10px;
+}
+
+.empleados_Carousel {
+     padding: 0 60px;
+}
+
+.empleados_Carousel .test_box .jons h4 {
+     font-size: 25px;
+     color: #090808;
+     line-height: 32px;
+     padding-left: 15px;
+     display: inline-block;
+}
+
+.empleados_Carousel .test_box .jons figure {
+     margin: 0;
+}
+
+.empleados_Carousel .test_box p {
+     font-size: 17px;
+     line-height: 28px;
+     color: #090808;
+     text-align: left;
+}
+
+.empleados_Carousel .carousel-indicators {
+     display: none;
+}
+
+#myCarousel .carousel-control-prev,
+#myCarousel .carousel-control-next {
+     width: 62px;
+     height: 62px;
+     background: #4480bd;
+     opacity: 1;
+     font-size: 28px;
+     color: #fff;
+     top: 50%;
+     border-radius: 30px;
+}
+
+
+/** end empleados section **/
+
 
 /** contact section **/
 

@@ -4,16 +4,7 @@ export class CampoCueCargando
  connectedCallback() {
   this.style.display = "block"
   this.innerHTML = /* HTML */
-   `<p>
-     <label>
-      <!-- Usamos cue para que los
-      navegadores no bloqueen la
-      página. -->
-      Contraseña *
-      <input name="cue" required
-        value="Cargando&hellip;">
-     </label>
-    </p>`
+   `<h6 class='mb-0'>Cue: <span class='text-secondary'> <input name="cue" required value="Cargando&hellip;"> </span></h6>`
  }
 
 }

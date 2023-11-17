@@ -19,6 +19,8 @@ class Usuario
 
  public int $id;
  public string $nombre;
+ public string $apellidoP;
+ public string $apellidoM;
  public string $cue;
  public string $match;
  /** @var Rol[] */
