@@ -158,6 +158,18 @@
 
 /****************************************/
 
+/******************Estilos para tarjetas de seleccion del dashboard del administrador**********************/
+
+.card-img-top {
+  height: 150px; /* Establece la altura deseada para las imágenes */
+  object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Ajusta el tamaño al pasar el cursor sobre la tarjeta */
+  transition: transform 0.3s ease; /* Agrega una transición suave */
+}
+
 @media (min-width: 990px) {
   .formu{
      max-width: 600px;

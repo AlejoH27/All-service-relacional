@@ -1,5 +1,7 @@
 import "../../lib/js/custom/indicador-cargando.js"
-import { htmlentities } from "../../lib/js/htmlentities.js"
+import { 
+  htmlentities 
+} from "../../lib/js/htmlentities.js"
 import {
  Sesion
 } from "../Sesion.js"
@@ -20,7 +22,7 @@ export class MiNav
    `
     <!-- Inicio nav-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="index.html"><img class="logo-pagina" src="images/logo.png" alt="All service"></a>
+      <a class="navbar-brand" href="index.html"><img class="logo-pagina" src="images/loguito.png" alt="All service"></a>
       
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -44,6 +46,15 @@ export class MiNav
 
  /** @param {Sesion} sesion */
  set sesion(sesion) {
+  const nombre = sesion.nombre
+
+   if (nombre !== undefined && nombre !== null) {
+       var resultado = nombre.toString();
+   } else {
+       // Manejar el caso en el que nombre es undefined o null
+      // console.log("nombre no está definida o es null");
+   }
+ 
   const cue = sesion.cue
   const rolIds = sesion.rolIds
   let innerHTML =
@@ -51,9 +62,11 @@ export class MiNav
   innerHTML +=
    this.hipervinculosAdmin(rolIds)
   innerHTML += 
-  this.hipervinculosCliente(rolIds)
+   this.hipervinculosCliente(rolIds)
   innerHTML += 
   this.usuario(cue)
+  innerHTML +=
+   this.hipervinculosClienteServicios(rolIds)
   innerHTML +=
    this.hipervinculoPerfil()
   const ul =
@@ -72,15 +85,15 @@ export class MiNav
  }
 
  /** @param {string} cue */
- usuario(cue) {
-  const cueHtml =
-   htmlentities(cue)
-  return cue === "" ?
+ usuario(nombre) {
+  const nombreHtml =
+   htmlentities(nombre)
+  return nombre === "" ?
    ""
    : /* HTML */
    `<li class="nav-item">
       <p class="nav-link">
-      ${cueHtml}
+      ${nombreHtml}
       </p>
     </li>`
  }
@@ -110,12 +123,26 @@ export class MiNav
   return rolIds.has(ROL_CLIENTE) ?
    /* HTML */
    `<li class="nav-item">
-     <a class="nav-link" <href="cliente.html">
-     Para clientes</a>
-    </li>`
+     <a class="nav-link" href="cliente.html">
+     Cliente</a>
+    </li>
+    `
    : ""
  }
-}
 
+   /** @param {Set<string>} rolIds */
+    hipervinculosClienteServicios(rolIds) {
+     return rolIds.has(ROL_CLIENTE) ?
+      /* HTML */
+      `<li class="nav-item">
+        <a class="nav-link" href="servicios.html">
+        Servicios</a>
+       </li>
+       `
+      : ""
+    }
+
+   
+ }
 customElements
  .define("mi-nav", MiNav)

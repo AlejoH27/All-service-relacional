@@ -2,8 +2,7 @@
 
 namespace srv\modelo;
 
-require_once 
-  "lib/php/valida.php";
+require_once "lib/php/valida.php";
 require_once
  "lib/php/validaIdNoVacio.php";
 require_once
@@ -15,7 +14,7 @@ require_once
 
  use srv\modelo\Rol;
 
-class Usuario
+class Servicio
 {
 
  public int $id;
