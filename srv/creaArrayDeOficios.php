@@ -1,22 +1,22 @@
 <?php
 
-use srv\modelo\Usuario;
+use srv\modelo\Oficio;
 
 /** @return Rol[] */
 function creaArrayDeOficios(
- array $usuarioIds
+ array $oficioIds
 ): array {
- if (sizeof($usuarioIds) === 0) {
+ if (sizeof($oficioIds) === 0) {
   return [];
  } else {
   /** @var Rol[] $roles */
-  $usuarios = [];
-  foreach ($usuarioIds as $usuarioId) {
-   $usu = new Usuario();
-   $usu->id = $usuarioId;
-   $usuarios[] = $usu;
+  $oficios = [];
+  foreach ($oficioIds as $oficioId) {
+   $ofi = new Oficio();
+   $ofi->id_oficio = $oficioId;
+   $oficios[] = $ofi;
   }
-  return $usuarios;
+  return $oficios;
  }
 }
 

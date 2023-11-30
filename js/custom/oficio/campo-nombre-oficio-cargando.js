@@ -4,14 +4,18 @@ export class CampoNombreOficioCargando
  connectedCallback() {
   this.style.display = "block"
   this.innerHTML = /* HTML */
-   `
-    <input type="text" class="form-control is-valid" id="validationServer01" placeholder="Oficio" name="tipo_oficio" required>
-    <div class="valid-feedback">
-        Looks good!
+   `<div class="mb-3">
+    <label class="form-label">Oficio:</label>
+    <div class="input-group">
+        <input type="text" class="form-control" name="tipo_oficio" required value="Cargando&hellip;">
     </div>
-    `
+</div>
+
+     `
  }
+
 }
 
-customElements.define("campo-nombre-oficio-cargando",
+customElements.define(
+ "campo-nombre-oficio-cargando",
  CampoNombreOficioCargando)

@@ -11,6 +11,9 @@ import {
 import {
  ROL_CLIENTE
 } from "../const/ROL_CLIENTE.js"
+import {
+ ROL_EMPLEADO
+} from "../const/ROL_EMPLEADO.js"
 
 export class MiNav
  extends HTMLElement {
@@ -21,25 +24,20 @@ export class MiNav
     
    `
     <!-- Inicio nav-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="index.html"><img class="logo-pagina" src="images/loguito.png" alt="All service"></a>
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarsExample04">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <indicador-cargando>
-            </indicador-cargando>
-          </li>
-        </ul>
-      </div>
-      
-    </nav>
-    <!-- Fin nav-->
-
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+          <a class="navbar-brand" href="index.html"><img class="logo-pagina" src="../images/loguito.png" alt="All service"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarsExample04">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                      <indicador-cargando></indicador-cargando>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+      <!-- Fin nav -->
     `
 
  }
@@ -63,6 +61,8 @@ export class MiNav
    this.hipervinculosAdmin(rolIds)
   innerHTML += 
    this.hipervinculosCliente(rolIds)
+  innerHTML +=
+   this.hipervinculosEmpleados(rolIds)
   innerHTML += 
   this.usuario(cue)
   innerHTML +=
@@ -79,7 +79,7 @@ export class MiNav
  hipervinculoInicio() {
   return (/* HTML */
    `<li class="nav-item">
-     <a class="nav-link" href="index.html">
+     <a class="nav-link" href="../index.html">
       Inicio</a>
     </li>`)
  }
@@ -101,7 +101,7 @@ export class MiNav
  hipervinculoPerfil() {
   return (/* HTML */
    `<li class="nav-item">
-     <a class="nav-link" href="perfil.html">
+     <a class="nav-link" href="../perfil.html">
        Perfil</a>
     </li>`)
  }
@@ -112,7 +112,7 @@ export class MiNav
    has(ROL_ADMINISTRADOR) ?
    /* HTML */
    `<li class="nav-item">
-     <a class="nav-link" href="admin.html">
+     <a class="nav-link" href="../admin.html">
      Para administradores</a>
     </li>`
    : ""
@@ -123,7 +123,7 @@ export class MiNav
   return rolIds.has(ROL_CLIENTE) ?
    /* HTML */
    `<li class="nav-item">
-     <a class="nav-link" href="cliente.html">
+     <a class="nav-link" href="../cliente.html">
      Cliente</a>
     </li>
     `
@@ -135,12 +135,23 @@ export class MiNav
      return rolIds.has(ROL_CLIENTE) ?
       /* HTML */
       `<li class="nav-item">
-        <a class="nav-link" href="servicios.html">
+        <a class="nav-link" href="../servicios.html">
         Servicios</a>
        </li>
        `
       : ""
     }
+
+   hipervinculosEmpleados(rolIds) {
+    return rolIds.has(ROL_EMPLEADO) ?
+     /* HTML */
+     `<li class="nav-item">
+       <a class="nav-link" href="../empleado.html">
+       Para Empleados</a>
+      </li>
+      `
+     : ""
+   }
 
    
  }

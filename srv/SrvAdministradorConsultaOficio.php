@@ -27,7 +27,7 @@ extends Servicio
    $render .=
     "<li>
       <p>
-        <a href='modificaOficio.html?id=$ofiId'>
+        <a href='modificaOficio.html?id_oficio=$ofiId'>
           <strong>{$ofiId}</strong>
           <strong>{$ofiNombre}</strong>
           <br>{$ofiDescripcion}

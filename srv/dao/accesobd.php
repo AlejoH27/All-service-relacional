@@ -44,20 +44,19 @@ class AccesoBd
   return self::$con;
  }
 
- private static
- function conecta(): PDO
- {
-  return new PDO(
-   // cadena de conexión
-   "sqlite:srvamuchos.db",
-   // usuario
-   null,
-   // contraseña
-   null,
-   [PDO::ATTR_ERRMODE
-   => PDO::ERRMODE_EXCEPTION]
+  private static
+   function conecta(): \PDO
+   {
+     return new PDO(
+      // cadena de conexión
+       "mysql:host=34.41.14.117;dbname=alejo;charset=utf8",
+      "root",
+      // contraseña
+      "root",
+      [PDO::ATTR_ERRMODE =>
+      PDO::ERRMODE_EXCEPTION]
   );
- }
+  }
 
  private static
  function prepara(PDO $con)

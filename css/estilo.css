@@ -2,6 +2,16 @@
   margin: 0px;
 }
 
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: #3498db; /* Cambia el color de fondo a un azul más bonito */
+    transition: background-color 0.5s ease-in-out; /* Agrega una transición suave al cambio de color */
+}
+
+.navbar-brand img {
+    height: 50px; /* Ajusta la altura del logo */
+}
+
 .logo-pagina{
   width: 200px;
   height: auto;
@@ -158,7 +168,7 @@
 
 /****************************************/
 
-/******************Estilos para tarjetas de seleccion del dashboard del administrador**********************/
+/****Estilos para tarjetas de seleccion del dashboard del administrador**/
 
 .card-img-top {
   height: 150px; /* Establece la altura deseada para las imágenes */
@@ -169,6 +179,18 @@
   transform: scale(1.05); /* Ajusta el tamaño al pasar el cursor sobre la tarjeta */
   transition: transform 0.3s ease; /* Agrega una transición suave */
 }
+
+/****************************************/
+
+
+
+/*****Estilos para modal***********/
+
+.modal {
+  z-index: 1050; /* o cualquier valor mayor al z-index del fondo opaco */
+}
+
+/****************************************/
 
 @media (min-width: 990px) {
   .formu{

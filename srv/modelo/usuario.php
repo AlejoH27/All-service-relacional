@@ -9,9 +9,14 @@ require_once
 require_once
  "lib/php/validaTextoNoVacio.php";
 require_once
+ "lib/php/validaNoNull.php";
+require_once
  "srv/txt/txtFaltaElCue.php";
 require_once
  "srv/txt/txtNoEsUnRol.php";
+require_once
+ "srv/txt/txtFaltaElArchivo.php";
+
 
  use srv\modelo\Rol;
 
@@ -24,8 +29,20 @@ class Usuario
  public string $apellidoM;
  public string $cue;
  public string $match;
+  
+ public string $fecha_nac;
+ public string $lugar_nac;
+ public string $curp;
+ //public ?Archivo $fotografia;
+ //public string $ini_doc;
+ //public string $curp_doc;
+ public int $telefono;
+ public string $ubicacion;
+ public string $comp_dom_doc;
+ public string $direccion;
  /** @var Rol[] */
  public array $roles;
+ public array $oficio;
 
 /**
   public function __construct()
@@ -49,8 +66,7 @@ class Usuario
  {
   $this->validaCueNoVacio();
   $this->validaRoles();
-
-   
+   //$this->validaArchivoNoNull();  
  }
 
  function validaCueNoVacio()
@@ -60,6 +76,14 @@ class Usuario
    txtFaltaElCue()
   );
  }
+
+  /*function validaArchivoNoNull()
+   {
+    validaNoNull(
+     $this->fotografia,
+     txtFaltaElArchivo()
+    );
+   }*/
 
  function validaRoles()
  {

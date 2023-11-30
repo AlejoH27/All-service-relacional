@@ -10,10 +10,10 @@ export class CampoCue
      <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroupPrepend3">@</span>
       </div>
-      <input type="email" class="form-control is-invalid" id="validationServerUsername" placeholder="Cue" aria-describedby="inputGroupPrepend3" name="cue" required>
-      <div class="invalid-feedback">
-        Please choose a username.
-      </div>
+      <input type="email" class="form-control is-valid" id="validationServerUsername" placeholder="Cue" aria-describedby="inputGroupPrepend3" name="cue" required>
+    <div id="validacionCue" class="valid-feedback">
+     Bien hecho!
+    </div>
    </div>
    `
  }

@@ -17,17 +17,17 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- style css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
   <!-- estilo css -->
-   <link rel="stylesheet" href="css/estilo.css">
+   <link rel="stylesheet" href="../css/estilo.css">
     <!-- Responsive-->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <!-- fevicon -->
-    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <link rel="icon" href="../images/fevicon.png" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.min.css">
     <!-- Tweaks for older IEs-->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
@@ -37,32 +37,32 @@
  
  </script>
   <script type="module"
-  src="./js/custom/mi-nav.js">
+  src="../js/custom/mi-nav.js">
   </script>
  <script type="module"
-   src="./lib/js/custom/hipervinculo-cancelar-index.js">
+   src="../lib/js/custom/hipervinculo-cancelar-index.js">
    </script>
  <script type="module"
-   src="./lib/js/custom/boton-agregar.js">
+   src="../lib/js/custom/boton-agregar.js">
    </script>
  <script type="module"
-   src="./lib/js/custom/indica-campos-obligatorios.js">
+   src="../lib/js/custom/indica-campos-obligatorios.js">
    </script>
   <script type="module"
-   src="./js/custom/oficio/campo-nombre-oficio.js">
+   src="../js/custom/oficio/campo-nombre-oficio.js">
    </script>
   <script type="module"
-   src="./js/custom/oficio/campo-descripcion-oficio.js">
+   src="../js/custom/oficio/campo-descripcion-oficio.js">
    </script>
  <script type="module"
-   src="./js/custom/campo-roles.js">
+   src="../js/custom/campo-roles.js">
    </script>
 </head>
 
 <body>
 
   <div class="loader_bg">
-     <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+     <div class="loader"><img src="../images/loading.gif" alt="#" /></div>
   </div>
   <mi-nav id="nav" class="encabezado"></mi-nav>
   </indicador-cargando>
@@ -71,28 +71,28 @@
   <script type="module">
     import {
      escuchaEventosAgrega
-    } from "./lib/js/escuchaEventosAgrega.js"
+    } from "../lib/js/escuchaEventosAgrega.js"
     import {
      submit
-    } from "./lib/js/submit.js"
+    } from "../lib/js/submit.js"
     import {
      muestraError
-    } from "./lib/js/muestraError.js"
+    } from "../lib/js/muestraError.js"
     import {
-     saltaAIndex
-    } from "./lib/js/saltaAIndex.js"
+     saltaVistaAdministradorOficios
+    } from "../lib/js/oficio/saltaVistaAdministradorOficios.js"
     import {
      ejecuta
-    } from "./lib/js/ejecuta.js"
+    } from "../lib/js/ejecuta.js"
     import {
      muestraRender
-    } from "./lib/js/muestraRender.js"
+    } from "../lib/js/muestraRender.js"
     import {
      Sesion
-    } from "./js/Sesion.js"
+    } from "../js/Sesion.js"
      import {
       ROL_ADMINISTRADOR
-     } from "./js/const/ROL_ADMINISTRADOR.js"
+     } from "../js/const/ROL_ADMINISTRADOR.js"
 
      //muestra el formulario para el registro
     preparaVistaOficio()
@@ -102,28 +102,27 @@
      try {
       const render =
        await descargaRolOpciones()
-      muestraRender(roles, render)
       escuchaEventosAgrega(forma,
        agrega)
      } catch (e) {
       muestraError(e)
-      saltaAIndex()
+      saltaVistaAdministradorOficios()
      }
     }
 
     async function
      descargaRolOpciones() {
      return await ejecuta(fetch(
-      "srv/SrvRolOpciones.php"))
+      "../srv/SrvRolOpciones.php"))
     }
 
     /** @param {Event} evt */
     async function agrega(evt) {
      try {
       const m = await submit(evt,
-       "srv/SrvAdministradorAgregaOficio.php",
+       "../srv/SrvAdministradorAgregaOficio.php",
        forma)
-      saltaAIndex()
+       saltaVistaAdministradorOficios()
      } catch (e) {
       muestraError(e.message)
      }
@@ -147,7 +146,7 @@
     async function
      buscaEnElServidor() {
      return await ejecuta(fetch(
-      "srv/SrvSesion.php"))
+      "../srv/SrvSesion.php"))
     }
 
     async function muestra(sesion) {
@@ -196,7 +195,6 @@
 
                   </div>
 
-                    <campo-roles hidden></campo-roles>
                   <div class="form-row">
 
 
@@ -289,15 +287,14 @@
   </footer>
 
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/jquery-3.0.0.min.js"></script>
-  <script src="js/plugin.js"></script>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../js/jquery-3.0.0.min.js"></script>
+  <script src="../js/plugin.js"></script>
   <!-- sidebar -->
-  <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-  <script src="js/custom.js"></script>
-  <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../js/custom.js"></script>
 </body>
 
 </html>

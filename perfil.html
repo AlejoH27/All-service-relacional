@@ -147,14 +147,14 @@
           logout.hidden = false
           usuario.value = cue
           escuchaEventos()
-           console.log('Antes de llamar a consultaServidor:', cue);
+           //console.log('Antes de llamar a consultaServidor:', cue);
           consultaServidor(usuario.value)
          }
         }
 
        async function
          consultaServidor(cue) {
-           console.log('despues de llamar al valor de cue en consultaServidor:', cue);
+           //console.log('despues de llamar al valor de cue en consultaServidor:', cue);
          return await ejecuta(fetch(
           "srv/SrvUsuarioConsultaUsuarioPerfil.php?cue="+ cue))
         }
@@ -286,7 +286,6 @@
     <!-- sidebar -->
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/custom.js"></script>
-    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
     </body>
 

@@ -18,20 +18,20 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- style css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!-- style css -->
   <!-- estilo css -->
-   <link rel="stylesheet" href="css/perfil.css">
+   <link rel="stylesheet" href="../css/perfil.css">
   <!-- estilo css -->
-   <link rel="stylesheet" href="css/estilo.css">
+   <link rel="stylesheet" href="../css/estilo.css">
     <!-- Responsive-->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <!-- fevicon -->
-    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <link rel="icon" href="../images/fevicon.png" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.min.css">
     <!-- Tweaks for older IEs-->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
@@ -40,187 +40,123 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
  <title>Modificar</title>
  <script type="module"
-   src="./lib/js/custom/campo-id-oculto.js">
+   src="../lib/js/custom/oficio/campo-id-oculto-oficio.js">
    </script>
  <script type="module"
-   src="./lib/js/custom/hipervinculo-cancelar-index.js">
+   src="../lib/js/custom/hipervinculo-cancelar-global.js">
    </script>
  <script type="module"
-   src="./lib/js/custom/boton-guardar.js">
+   src="../lib/js/custom/boton-guardar.js">
    </script>
  <script type="module"
-   src="./lib/js/custom/boton-eliminar.js">
+   src="../lib/js/custom/boton-eliminar.js">
    </script>
  <script type="module"
-   src="./lib/js/custom/indica-campos-obligatorios.js">
+   src="../lib/js/custom/indica-campos-obligatorios.js">
    </script>
   <script type="module"
-  src="./js/custom/campo-nombre-cargando.js">
+  src="../js/custom/oficio/campo-nombre-oficio-cargando.js">
   </script>
   <script type="module"
-  src="./js/custom/campo-apellido-paterno-cargando.js">
+  src="../js/custom/oficio/campo-descripcion-oficio-cargando.js">
   </script>
   <script type="module"
-  src="./js/custom/campo-apellido-materno-cargando.js">
+  src="../js/custom/campo-nombre-cargando.js">
   </script>
  <script type="module"
-   src="./js/custom/campo-cue-cargando.js">
-   </script>
- <script type="module"
-   src="./js/custom/campo-roles.js">
+   src="../js/custom/campo-roles.js">
    </script>
   <script type="module"
-    src="./js/custom/campo-match-cargando.js">
+    src="../js/custom/campo-match-cargando.js">
     </script>
   <script type="module"
-  src="./js/custom/mi-nav.js">
+  src="../js/custom/mi-nav.js">
   </script>
 </head>
 
 <body>
 
   <div class="loader_bg">
-     <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+     <div class="loader"><img src="../images/loading.gif" alt="#" /></div>
   </div>
   <mi-nav id="nav" class="encabezado"></mi-nav>
+
+  <main id="main" hidden>
+    <h1>Administrador</h1>
+   </main>
   
- <form id="forma">
-  <h1 style="text-align: center; padding-top: 10px; padding-bottom: 10px;">Modificar</h1>
-  <campo-id-oculto>
-  </campo-id-oculto>
-  
+  <form id="forma" class="my-5">
+      <h1 class="text-center mb-4">Modificar</h1>
+      <campo-id-oculto-oficio></campo-id-oculto-oficio>
 
-   <div class='container perfil'>
-       <div class='main-body'>
-           <div class='row'>
+      <div class="container">
+          <div class="row justify-content-center align-items-center">
+              <div class="col-md-12 col-lg-6">
+                  <div class="card shadow">
+                      <div class="card-body">
+                          <div class="mb-3">
+                              <campo-nombre-oficio-cargando></campo-nombre-oficio-cargando>
+                          </div>
+                          <hr>
+                          <div class="mb-3">
+                              <campo-descripcion-oficio-cargando></campo-descripcion-oficio-cargando>
+                          </div>
+                          <hr>
+                          <!--<indica-campos-obligatorios></indica-campos-obligatorios>-->
+                          <div class="d-grid gap-2">
+                              <boton-guardar></boton-guardar>
+                              <boton-eliminar></boton-eliminar>
+                          </div>
+                          <div class="text-center mt-3">
+                              <hipervinculo-cancelar-global></hipervinculo-cancelar-global>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </form>
 
-               <!--<campo-nombre-cargando></campo-nombre-cargando>
-               <campo-apellido-paterno-cargando></campo-apellido-paterno-cargando>
-               <campo-apellido-materno-cargando></campo-apellido-materno-cargando>
-               <campo-cue-cargando></campo-cue-cargando>
-               <campo-match-cargando></campo-match-cargando>
-               <campo-roles></campo-roles>
-               <!--<indica-campos-obligatorios>
-                    </indica-campos-obligatorios>-->
-
-               <div class='col-md-6 col-lg-5'>
-                   <div class='card mb-3'>
-                       <div class='card-body'>
-                           <div class='row'>
-                               <div class='col-12'>
-                                   <campo-nombre-cargando></campo-nombre-cargando>
-                               </div>
-                           </div>
-                           <hr>
-                           <div class='row'>
-                               <div class='col-12'>
-                                   <campo-apellido-paterno-cargando></campo-apellido-paterno-cargando>
-                               </div>
-                           </div>
-                           <hr>
-                           <div class='row'>
-                               <div class='col-12'>
-                                   <campo-apellido-materno-cargando></campo-apellido-materno-cargando>
-                               </div>
-                           </div>
-                           <hr>
-                           <div class='row'>
-                               <div class='col-12'>
-                                   <campo-cue-cargando></campo-cue-cargando>
-                               </div>
-                           </div>
-                           <hr>
-                           <div class='row'>
-                               <div class='col-12'>
-                                   <campo-match-cargando></campo-match-cargando>
-                               </div>
-                           </div>
-                           <hr>
-                           <campo-roles></campo-roles>
-
-                           <!--<indica-campos-obligatorios>
-                                  </indica-campos-obligatorios>-->
-                           <boton-guardar></boton-guardar>
-                           <boton-eliminar></boton-eliminar>
-                           <hipervinculo-cancelar-index></hipervinculo-cancelar-index>
-                       </div>
-                   </div>
-               </div>
-
-               <div class='col-md-6 col-lg-4'>
-                   <div class='card'>
-                       <div class='card-body'>
-                           <div class='d-flex flex-column align-items-center text-center'>
-                               <img class='foto-perfil img-fluid' src='images/carpinteria.jpg' alt='Admin' width='265'
-                                   height='265'>
-                           </div>
-                       </div>
-                   </div>
-
-                   <div class='card mt-3'>
-                       <ul class='list-group list-group-flush'>
-                           <li class='list-group-item'>
-                               <h6 class='mb-0'>Calle: <span class='text-secondary'>Gema</span></h6>
-                           </li>
-                           <li class='list-group-item'>
-                               <h6 class='mb-0'>Numero Exterior: <span class='text-secondary'>4</span></h6>
-                           </li>
-                           <li class='list-group-item'>
-                               <h6 class='mb-0'>Colonia: <span class='text-secondary'>Balbuena</span></h6>
-                           </li>
-                           <li class='list-group-item'>
-                               <h6 class='mb-0'>Municipio: <span class='text-secondary'>Chachalacas</span></h6>
-                           </li>
-                           <li class='list-group-item'>
-                               <h6 class='mb-0'>Estado: <span class='text-secondary'>Veracruz</span></h6>
-                           </li>
-                       </ul>
-                   </div>
-               </div>
-
-           </div>
-       </div>
-   </div>
-
-   
- </form>
 
   
 
  <script type="module">
   import {
    ejecuta
-  } from "./lib/js/ejecuta.js"
+  } from "../lib/js/ejecuta.js"
   import {
    submit
-  } from "./lib/js/submit.js"
+  } from "../lib/js/submit.js"
   import {
    muestraError
-  } from "./lib/js/muestraError.js"
+  } from "../lib/js/muestraError.js"
   import {
    parametrosDePagina
-  } from "./lib/js/parametrosDePagina.js"
+  } from "../lib/js/parametrosDePagina.js"
   import {
-   saltaAIndex
-  } from "./lib/js/saltaAIndex.js"
+   saltaVistaAdministradorOficios
+  } from "../lib/js/oficio/saltaVistaAdministradorOficios.js"
   import {
    muestraNumero
-  } from "./lib/js/muestraNumero.js"
+  } from "../lib/js/muestraNumero.js"
   import {
    muestraTexto
-  } from "./lib/js/muestraTexto.js"
+  } from "../lib/js/muestraTexto.js"
   import {
    escuchaEventosModifica
-  } from "./lib/js/escuchaEventosModifica.js"
+  } from "../lib/js/escuchaEventosModifica.js"
   import {
    confirmaEliminar
-  } from "./lib/js/confirmaEliminar.js"
+  } from "../lib/js/confirmaEliminar.js"
   import {
    muestraRender
-  } from "./lib/js/muestraRender.js"
+  } from "../lib/js/muestraRender.js"
   import {
    Sesion
-  } from "./js/Sesion.js"
+  } from "../js/Sesion.js"
+   import {
+    ROL_ADMINISTRADOR
+   } from "../js/const/ROL_ADMINISTRADOR.js"
 
   const parametros =
    parametrosDePagina()
@@ -228,69 +164,78 @@
    //Funcion para ver la sesion
    preparaVistaSesion()
 
-    async function preparaVistaSesion() {
-     try {
-      const json =
-       await buscaEnElServidorSesion()
-      const sesion = new Sesion(json)
-      muestraSesion(sesion)
-     } catch (e) {
-      muestraError(e)
-     }
+   async function preparaVistaSesion() {
+    try {
+     const json =
+      await buscaEnElServidorSesion()
+     const sesion = new Sesion(json)
+     muestraSesion(sesion)
+    } catch (e) {
+     muestraError(e)
     }
+   }
 
    async function
-     buscaEnElServidorSesion() {
-     return await ejecuta(fetch(
-      "srv/SrvSesion.php"))
-    }
+    buscaEnElServidorSesion() {
+    return await ejecuta(fetch(
+     "../srv/SrvSesion.php"))
+   }
 
-   function muestraSesion(sesion) {
+   async function muestraSesion(sesion) {
+    if (sesion.rolIds
+     .has(ROL_ADMINISTRADOR)) {
      nav.sesion = sesion
+     
+    } else {
+     saltaAIndex()
     }
+   }
 
    //**********************************
 
    /******Muestra la vista del formulario para modificacion*******/
-
-   preparaVista()
    
-  async function preparaVista() {
-   try {
-    const json =
-     await buscaEnElServidor()
-     muestraRender(roles,
-      json.render)
-    muestra(json.modelo)
-    escuchaEventosModifica(forma,
-     modifica, btnElimina, elimina)
-   } catch (e) {
-    muestraError(e)
-    //saltaAIndex()
+
+   preparaVista();
+
+   async function preparaVista() {
+       try {
+          //console.log("Valor de id_oficio:", parametros.get("id_oficio"));
+           const json = await buscaEnElServidor();
+           //muestraRender(roles, json.render); // Si roles ya no es necesario, puedes eliminar esta línea
+           muestra(json.modelo);
+           escuchaEventosModifica(forma, modifica, btnElimina, elimina);
+       } catch (e) {
+           muestraError(e);
+           saltaVistaAdministradorOficios();
+       }
    }
-  }
 
-  async function
-   buscaEnElServidor() {
-   return await ejecuta(fetch(
-    "srv/SrvUsuarioBusca.php?"
-    + parametros))
-  }
+   async function buscaEnElServidor() {
+       //console.log("Valor de id_oficio en buscaEnElServidor:", parametros.get("id_oficio"));
+       return await ejecuta(fetch("../srv/SrvAdministradorBuscaOficio.php?" + parametros));
+   }
 
-  function muestra(modelo) {
-   muestraNumero(forma.id,
-    modelo.id)
-   muestraTexto(forma.nombre,
-    modelo.nombre)
-   muestraTexto(forma.apellidoP,
-    modelo.apellidoP)
-   muestraTexto(forma.apellidoM,
-    modelo.apellidoM)
-   muestraTexto(forma.cue,
-    modelo.cue)
-   muestraTexto(forma.match,
-    modelo.match)
-  }
+
+   function muestra(modelo) {
+     if (modelo.id_oficio !== undefined) {
+         muestraNumero(forma.id_oficio, modelo.id_oficio);
+     }else{
+       console.log("Algo pasa con el id")
+     }
+
+     if(modelo.tipo_oficio !== undefined){
+       muestraTexto(forma.tipo_oficio, modelo.tipo_oficio);
+     }else{
+       console.log("Algo pasa con el tipo_oficio")
+     }
+
+     if(modelo.descripcion_oficio !== undefined){
+       muestraTexto(forma.descripcion_oficio, modelo.descripcion_oficio);
+     }else{
+       console.log("Algo pasa con el descripcion_oficio")
+     }
+   }
 
 /*************Termina vista para el formulario para modificar************/
 
@@ -298,9 +243,9 @@
   async function modifica(evt) {
    try {
     const m = await submit(evt,
-     "srv/SrvUsuarioModifica.php",
+     "../srv/SrvAdministradorModificaOficio.php",
      forma)
-    saltaAIndex()
+    saltaVistaAdministradorOficios()
    } catch (e) {
     muestraError(e)
    }
@@ -311,9 +256,9 @@
     if (confirmaEliminar()) {
      const json = await ejecuta(
       fetch(
-       "srv/SrvUsuarioElimina.php?"
+       "../srv/SrvAdministradorEliminaOficio.php?"
        + parametros))
-     saltaAIndex()
+     saltaVistaAdministradorOficios()
     }
    } catch (e) {
     muestraError(e)
@@ -391,15 +336,14 @@
     </footer>
 
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery-3.0.0.min.js"></script>
-    <script src="js/plugin.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery-3.0.0.min.js"></script>
+    <script src="../js/plugin.js"></script>
     <!-- sidebar -->
-    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../js/custom.js"></script>
 
 </body>
 </html>

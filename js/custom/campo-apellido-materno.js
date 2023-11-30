@@ -5,9 +5,9 @@ export class CampoApellidoMaterno
   this.style.display = "block"
   this.innerHTML = /* HTML */
    `
-    <input type="text" class="form-control is-valid" id="validationServer01" placeholder="Apellido Materno" name="apellidoM" required>
-    <div class="valid-feedback">
-        Looks good!
+    <input type="text" class="form-control is-valid" id="validationServer03" placeholder="Apellido Materno" name="apellidoM" required>
+    <div id="validacionApellidoM" class="valid-feedback">
+      Bien hecho!
     </div>
     `
  }

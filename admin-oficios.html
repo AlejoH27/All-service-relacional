@@ -18,19 +18,19 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- style css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!-- estilo css -->
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="../css/estilo.css">
     <!-- style css -->
-    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="../css/perfil.css">
     <!-- Responsive-->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <!-- fevicon -->
     <link rel="icon" href="images/fevicon.png" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.min.css">
     <!-- Tweaks for older IEs-->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
@@ -38,22 +38,22 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
      <script type="module"
-      src="./js/custom/mi-nav.js">
+      src="../js/custom/mi-nav.js">
       </script>
      <script type="module"
-        src="./lib/js/custom/hipervinculo-agregar-agrega.js">
+        src="../lib/js/custom/hipervinculo-agregar-agrega.js">
         </script>
       <script type="module"
-        src="./lib/js/custom/hipervinculo-agregar-oficio.js">
+        src="../lib/js/custom/hipervinculo-agregar-oficio.js">
       </script>
       <script type="module"
-        src="./lib/js/custom/lista-principal.js">
+        src="../lib/js/custom/lista-principal.js">
       </script>
       <script type="module"
-        src="./js/custom/oficio/campo-nombre-oficio-cargando.js">
+        src="../js/custom/oficio/campo-nombre-oficio-cargando.js">
       </script>
       <script type="module"
-        src="./js/custom/oficio/campo-descripcion-oficio-cargando.js">
+        src="../js/custom/oficio/campo-descripcion-oficio-cargando.js">
       </script>
 
    </head>
@@ -76,34 +76,34 @@
     <script type="module">
       import {
        ejecuta
-      } from "./lib/js/ejecuta.js"
+      } from "../lib/js/ejecuta.js"
       import {
        muestraError
-      } from "./lib/js/muestraError.js"
+      } from "../lib/js/muestraError.js"
       import {
        saltaAIndex
-      } from "./lib/js/saltaAIndex.js"
+      } from "../lib/js/saltaAIndex.js"
       import {
        muestraNumero
-      } from "./lib/js/muestraNumero.js"
+      } from "../lib/js/muestraNumero.js"
       import {
        muestraTexto
-      } from "./lib/js/muestraTexto.js"
+      } from "../lib/js/muestraTexto.js"
       import {
        muestraTextoOficio
-      } from "./lib/js/muestraTextoOficio.js"
+      } from "../lib/js/muestraTextoOficio.js"
       import {
        parametrosDePagina
-      } from "./lib/js/parametrosDePagina.js"
+      } from "../lib/js/parametrosDePagina.js"
       import {
        Sesion
-      } from "./js/Sesion.js"
+      } from "../js/Sesion.js"
       import {
        muestraRender
-      } from "./lib/js/muestraRender.js"
+      } from "../lib/js/muestraRender.js"
       import {
        ROL_ADMINISTRADOR
-      } from "./js/const/ROL_ADMINISTRADOR.js"
+      } from "../js/const/ROL_ADMINISTRADOR.js"
 
 
       //funcion para ver a los empleados disponibles
@@ -122,7 +122,7 @@
        async function
         consultaServidor() {
         return await ejecuta(fetch(
-         "srv/SrvAdministradorConsultaOficio.php"))
+         "../srv/SrvAdministradorConsultaOficio.php"))
        }
 
        //**********************************
@@ -178,7 +178,7 @@
       async function
        buscaEnElServidor() {
        return await ejecuta(fetch(
-        "srv/SrvSesion.php"))
+        "../srv/SrvSesion.php"))
       }
 
       async function muestra(sesion) {
@@ -302,15 +302,14 @@
     </footer>
     <!-- end footer -->
     <!-- Javascript files-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery-3.0.0.min.js"></script>
-    <script src="js/plugin.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery-3.0.0.min.js"></script>
+    <script src="../js/plugin.js"></script>
     <!-- sidebar -->
-    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../js/custom.js"></script>
 </body>
 
 </html>
