@@ -13,14 +13,14 @@ require_once
 require_once
  "srv/creaArrayDeOficios.php";
 require_once
- "srv/dao/usuarioAgrega.php";
+ "srv/dao/usuarioAgregaCliente.php";
 
 
 use \lib\php\Servicio;
 use \srv\modelo\Usuario;
 //use \srv\modelo\Archivo;
 
-class SrvUsuarioAgrega
+class SrvUsuarioAgregaCliente
 extends Servicio
 {
 
@@ -40,7 +40,7 @@ extends Servicio
    leeSinEspaciosInFin("match");
   $usuario->fecha_nac =
    leeSinEspaciosInFin("fecha_nac");
-   $usuario->lugar_nac =
+   /*$usuario->lugar_nac =
    leeSinEspaciosInFin("lugar_nac");
    $usuario->curp =
    leeSinEspaciosInFin("curp");
@@ -52,7 +52,7 @@ extends Servicio
    $usuario->fotografia = $archivo;
    /* Los bytes se daescargan con
     * SrvArchivo. 
-   $archivo->foto = "";*/
+   $archivo->foto = "";//
    
    $usuario->telefono =
    leeSinEspaciosInFin("telefono");
@@ -61,22 +61,22 @@ extends Servicio
    $usuario->comp_dom_doc =
    leeSinEspaciosInFin("comp_dom_doc");
    $usuario->direccion =
-   leeSinEspaciosInFin("direccion");
+   leeSinEspaciosInFin("direccion");*/
 
    $rolIds = leeArray("rolIds");
    $usuario->roles = creaArrayDeRoles($rolIds);
 
-   $oficio = leeArray("idOficios");  // Asumiendo que tienes una función leeArrayOficio que devuelve un array
+   /*$oficio = leeArray("idOficios");  // Asumiendo que tienes una función leeArrayOficio que devuelve un array
    
-   $usuario->oficio = creaArrayDeOficios($oficio);
+   $usuario->oficio = creaArrayDeOficios($oficio);*/
 
    
 
-  usuarioAgrega($usuario);
+  usuarioAgregaCliente($usuario);
   return $usuario;
  }
   
 }
 
-$servicio = new SrvUsuarioAgrega();
+$servicio = new SrvUsuarioAgregaCliente();
 $servicio->ejecuta();

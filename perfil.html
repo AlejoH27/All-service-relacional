@@ -46,7 +46,7 @@
       <script type="module"
         src="./lib/js/custom/lista-principal.js">
         </script>
-
+      
      <script type="module"
        src="./js/custom/campo-nombre-cargando.js">
        </script>
@@ -72,7 +72,6 @@
   <!-- banner -->
 
   </mi-nav>
- <h1>Mi Perfil</h1>
 
      <script type="module">
        import {
@@ -84,6 +83,9 @@
        import {
         muestraRender
        } from "./lib/js/muestraRender.js"
+       import { 
+         saltaAIndex 
+       } from "./lib/js/saltaAIndex.js"
        import {
         Sesion
        } from "./js/Sesion.js"
@@ -168,16 +170,19 @@
         try {
          await ejecuta(fetch(
           "srv/SrvLogout.php"))
-         location.reload()
+          saltaAIndex()
+         //location.reload()
         } catch (e) {
          muestraError(e)
         }
        }
       </script>
 
-     <section>
+     <section class="banner_main" style="margin-top: 75px;">
+
+        <h1>Mi Perfil</h1>
        
-       <div class="container">
+       <div class="container" hidden>
           <div class="roles">
             <output id="roles">
               <indicador-cargando></indicador-cargando>
@@ -185,7 +190,7 @@
           </div>
         </div>
 
-      <div class="container">
+      <div class="container" hidden>
         <div class="usuarios">
           <output id="usuario">
             <indicador-cargando></indicador-cargando>
@@ -271,7 +276,7 @@
 
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2020 Copyright:
+        © 2023 Copyright:
         <a class="text-white" href="https://mdbootstrap.com/" >EasySoft</a>
       </div>
       <!-- Copyright -->

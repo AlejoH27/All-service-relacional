@@ -69,9 +69,7 @@
   <!-- banner -->
 
   </mi-nav>
- <main id="main" hidden>
-  <h1>oficios</h1>
- </main>
+
 
     <script type="module">
       import {
@@ -205,27 +203,27 @@
       /** @param {Event} evt */
 
      </script>
-
     
-    <hipervinculo-agregar-oficio></hipervinculo-agregar-oficio>
-
-
-    <div class="container mt-5">
-         <table class="table" id="campos">
-            <thead>
-               <tr>
-                  <th>Nombre</th>
-                  <th>Descripción</th>
-                  <th>Acciones</th>
-               </tr>
-            </thead>
-            <tbody id="tablaBody">
-               <!-- El contenido de la tabla se agregará aquí dinámicamente -->
-            </tbody>
-         </table>
-
-         <lista-principal></lista-principal>
+<section class="banner_main" style="margin-top: 75px;">
+    <div class="container mt-5"> 
+      
+      <div class="card">
+        <div class="card-body">
+      
+            <main id="main" hidden>
+              <h1>Oficios</h1>
+             </main>
+               <lista-principal></lista-principal>
+          
+          
+        </div>
+          <div class="boton-agregar">
+             <hipervinculo-agregar-oficio></hipervinculo-agregar-oficio>
+          </div>
+        </div>
       </div>
+
+  </section>
 
 
 

@@ -40,7 +40,7 @@
   src="../js/custom/mi-nav.js">
   </script>
  <script type="module"
-   src="../lib/js/custom/hipervinculo-cancelar-index.js">
+   src="../lib/js/custom/hipervinculo-cancelar-global.js">
    </script>
  <script type="module"
    src="../lib/js/custom/boton-agregar.js">
@@ -164,54 +164,41 @@
       /**********************************/
    </script>
 
- <section class="banner_main">
+ <section class="banner_main" style="margin-top: 75px;">
 
-      <div class="container formu">
-         <div class="row d_flex">
-            <div class="col-md-12">
-              <!--<form id="forma" class="formulario-registro-cliente">-->
-
-                <form id="forma" class="formulario-registro-cliente">
-
-                  <h1 style="text-align:center; padding-top: 10px; padding-bottom: 10px;">
-
-                    <main id="main" hidden>
-                      Agregar oficios
-                     </main>
-
-                  </h1>
-
-                  <div class="form-row">
-
-                    <div class="col-md-6 mb-3">
-                      <label for="validationServer01">Oficio</label>
-                        <campo-nombre-oficio></campo-nombre-oficio>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                      <label for="validationServer02">descripcion del oficio</label>
-                      <campo-descripcion-oficio></campo-descripcion-oficio>
-                    </div>
-
-                  </div>
-
-                  <div class="form-row">
-
-
-                  </div>
-                  
-                  <div class="row">
-                    <boton-agregar></boton-agregar>
-                    <p>
-                     <hipervinculo-cancelar-index>
-                     </hipervinculo-cancelar-index>
-                    </p>
-                  </div>
-
-                </form>
-            </div>
-         </div>
+      <div class="container formu p-4" style="background-color: white;">
+          <div class="row d_flex">
+              <div class="col-md-12">
+                  <form id="forma" class="formulario-registro-cliente">
+                      <h1 class="text-center pt-4 pb-4">
+                          <main id="main" hidden>
+                              Agregar oficios
+                          </main>
+                      </h1>
+                      <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                              <label for="validationServer01">Oficio</label>
+                              <campo-nombre-oficio></campo-nombre-oficio>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                              <label for="validationServer02">descripcion del oficio</label>
+                              <campo-descripcion-oficio></campo-descripcion-oficio>
+                          </div>
+                      </div>
+                      <div class="form-row">
+                          <!-- Puedes agregar más campos aquí si es necesario -->
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-3 d-flex justify-content-between align-items-center">
+                            <boton-agregar></boton-agregar>
+                            <hipervinculo-cancelar-global></hipervinculo-cancelar-global>
+                        </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
       </div>
+
 
    </section>
 

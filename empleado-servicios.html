@@ -69,9 +69,6 @@
   <!-- banner -->
 
   </mi-nav>
- <main id="main" hidden>
-  <h1>Servicios ofrecidos</h1>
- </main>
 
     <script type="module">
       import {
@@ -160,27 +157,30 @@
 
      </script>
 
-    
-    <hipervinculo-agregar-servicio-empleado></hipervinculo-agregar-servicio-empleado>
+    <section class="banner_main" style="margin-top: 75px;">
+      <div class="container mt-6">
+        
+         <div class="card">
+           <div class="card-body">
+
+             <main id="main" hidden>
+               <h1>Servicios ofrecidos</h1>
+              </main>
+
+              <lista-principal></lista-principal>
+            </div>
+           <div class="boton-agregar">
+            <hipervinculo-agregar-servicio-empleado></hipervinculo-agregar-servicio-empleado>
+           </div>
+           
+           </div>
+          
+        </div>
 
 
-    <div class="container mt-5">
-         <table class="table" id="campos">
-            <thead>
-               <tr>
-                  <th>Nombre</th>
-                  <th>Descripción</th>
-                  <th>Acciones</th>
-               </tr>
-            </thead>
-            <tbody id="tablaBody">
-               <!-- El contenido de la tabla se agregará aquí dinámicamente -->
-            </tbody>
-         </table>
+      
 
-         <lista-principal></lista-principal>
-      </div>
-
+      </section>
 
 
 

@@ -1,18 +1,16 @@
 <?php
 
 require_once __DIR__ . "/../lib/php/autoload.php";
-require_once "srv/dao/administradorConsultaOficio.php";
+require_once "srv/dao/administradorConsultaUsuario.php";
 
 use \lib\php\Servicio;
 
-class SrvAdministradorConsultaOficio extends Servicio
+class SrvAdministradorConsultaUsuario extends Servicio
 {
     protected function implementacion()
     {
-        $lista = administradorConsultaOficio();
+        $lista = administradorConsultaUsuario();
         $render = "";
-
-        
 
         // Inicia la tabla y aplica un fondo blanco y texto negro
         $render .= '<table class="table table-white text-dark">';
@@ -20,26 +18,29 @@ class SrvAdministradorConsultaOficio extends Servicio
         $render .= '<tr>';
         $render .= '<th scope="col">ID</th>';
         $render .= '<th scope="col">Nombre</th>';
-        $render .= '<th scope="col">Descripción</th>';
+        $render .= '<th scope="col">Correo</th>';
+        $render .= '<th scope="col">Roles</th>';
         $render .= '<th scope="col" class="text-center">Opciones</th>';
         $render .= '</tr>';
         $render .= '</thead>';
         $render .= '<tbody>';
 
         foreach ($lista as $modelo) {
-            $ofiId = htmlentities($modelo->ofiId);
-            $ofiNombre = htmlentities($modelo->ofiNombre);
-            $ofiDescripcion = htmlentities($modelo->ofiDescripcion);
+            $usuId = htmlentities($modelo->usuId);
+            $usuNombre = htmlentities($modelo->usuNombre);
+            $usuCue = htmlentities($modelo->usuCue);
+            $roles = $modelo->roles === null || $modelo->roles === "" ? "<em>-- Sin roles --</em>" : htmlentities($modelo->roles);
 
             // Agrega una fila por cada elemento en la lista
             $render .= '<tr>';
-            $render .= "<td>{$ofiId}</td>";
-            $render .= "<td>{$ofiNombre}</td>";
-            $render .= "<td>{$ofiDescripcion}</td>";
+            $render .= "<td>{$usuId}</td>";
+            $render .= "<td>{$usuNombre}</td>";
+            $render .= "<td>{$usuCue}</td>";
+            $render .= "<td>{$roles}</td>";
 
             // Nueva celda para opciones (en este caso, un enlace para modificar)
             $render .= '<td class="text-center">';
-            $render .= "<a href='modificaOficio.html?id_oficio={$ofiId}' class='btn btn-info'>Modificar</a>";
+            $render .= "<a href='modifica.html?id={$usuId}' class='btn btn-info'>Modificar</a>";
             // Puedes agregar más enlaces o botones según tus necesidades
             $render .= '</td>';
 
@@ -50,11 +51,9 @@ class SrvAdministradorConsultaOficio extends Servicio
         $render .= '</tbody>';
         $render .= '</table>';
 
-        
-
         return $render;
     }
 }
 
-$servicio = new SrvAdministradorConsultaOficio();
+$servicio = new SrvAdministradorConsultaUsuario();
 $servicio->ejecuta();

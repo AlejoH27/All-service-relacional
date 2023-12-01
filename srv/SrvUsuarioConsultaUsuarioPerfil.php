@@ -20,11 +20,11 @@ class SrvUsuarioConsultaUsuarioPerfil extends Servicio
             $usuCue = htmlentities($modelo->usuCue);
 
             $usuFecha_nac = htmlentities($modelo->usuFecha_Nac);
-            $usuLugar_nac = htmlentities($modelo->usuLugar_Nac);
+            /*$usuLugar_nac = htmlentities($modelo->usuLugar_Nac);
             $usuCurp = htmlentities($modelo->usuCurp);
             $usuTelefono = htmlentities($modelo->usuTelefono);
             $usuUbicacion = htmlentities($modelo->usuUbicacion);
-            $usuDireccion = htmlentities($modelo->usuDireccion);
+            $usuDireccion = htmlentities($modelo->usuDireccion);*/
 
             $roles = $modelo->roles === null || $modelo->roles === "" ? "<em>-- Sin roles --</em>" : htmlentities($modelo->roles);
 
@@ -55,24 +55,9 @@ class SrvUsuarioConsultaUsuarioPerfil extends Servicio
                                             <h6 class='mb-0'>Fecha de nacimiento: <span class='text-secondary'>{$usuFecha_nac}</span></h6>
                                         </li>
 
-                                        <li class='list-group-item'>
-                                            <h6 class='mb-0'>Lugar de nacimiento: <span class='text-secondary'>{$usuLugar_nac}</span></h6>
-                                        </li>
+                                        
 
-                                        <li class='list-group-item'>
-                                            <h6 class='mb-0'>Curp: <span class='text-secondary'>{$usuCurp}</span></h6>
-                                        </li>
-
-                                        <li class='list-group-item'>
-                                            <h6 class='mb-0'>Telefono: <span class='text-secondary'>{$usuTelefono}</span></h6>
-                                        </li>
-
-                                        <li class='list-group-item'>
-                                            <h6 class='mb-0'>ubicacion: <span class='text-secondary'>{$usuUbicacion}</span></h6>
-                                        </li>
-                                        <li class='list-group-item'>
-                                            <h6 class='mb-0'>Direccion: <span class='text-secondary'>{$usuDireccion}</span></h6>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -111,16 +96,21 @@ class SrvUsuarioConsultaUsuarioPerfil extends Servicio
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Verificar si el oficio no es nulo antes de mostrarlo -->
+                                " . (!is_null($oficio) ? "
                                 <div class='card mb-3'>
                                     <div class='card-body'>
+                                         
                                         <div class='row'>
                                             <div class='col-12'>
                                                 <h6 class='mb-0'>Oficio: <span class='text-secondary'>{$oficio}</span></h6>
                                             </div>
                                         </div>
                                         <hr>
+                                        
                                     </div>
-                                </div>
+                                </div>" : "") . "
+                                <!-- Fin de verificación -->
                             </div>
                         </div>
                     </div>

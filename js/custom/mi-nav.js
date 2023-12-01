@@ -24,6 +24,7 @@ export class MiNav
     
    `
     <!-- Inicio nav-->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
           <a class="navbar-brand" href="index.html"><img class="logo-pagina" src="../images/loguito.png" alt="All service"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,12 +69,29 @@ export class MiNav
   innerHTML +=
    this.hipervinculosClienteServicios(rolIds)
   innerHTML +=
-   this.hipervinculoPerfil()
+   this.hipervinculoPerfil(cue)
+  
+   
   const ul =
    this.querySelector("ul")
   if (ul !== null) {
    ul.innerHTML = innerHTML
+    
+   ul.insertAdjacentHTML('afterend', this.hipervinculoSesion(cue));
   }
+
+   /* Para reutilizar */
+   /*ul.insertAdjacentHTML('afterend', `
+          <li class="nav-item">
+              <a class="nav-link" href="tu-enlace-aqui">Hay sesion</a>
+          </li>
+      `);
+    : ul.insertAdjacentHTML('afterend', `
+        <li class="nav-item">
+            <a class="nav-link" href="tu-enlace-aqui">No hay sesion</a>
+        </li>
+    `);*/
+   
  }
 
  hipervinculoInicio() {
@@ -98,12 +116,14 @@ export class MiNav
     </li>`
  }
 
- hipervinculoPerfil() {
-  return (/* HTML */
+ hipervinculoPerfil(cue) {
+  return cue ?
+   /* HTML */
    `<li class="nav-item">
      <a class="nav-link" href="../perfil.html">
        Perfil</a>
-    </li>`)
+    </li>`
+    : ""
  }
 
  /** @param {Set<string>} rolIds */
@@ -151,6 +171,18 @@ export class MiNav
       </li>
       `
      : ""
+   }
+
+   hipervinculoSesion(cue){
+     return cue ?
+     /* HTML */
+        `
+       `
+     :  `
+             <a type="button" class="btn btn-outline-success nav-link mr-2" href="login.html">Iniciar sesión</a>
+             <a type="button" class="btn btn-outline-warning nav-link" href="agrega.html">Registrarse</a>
+
+     `
    }
 
    

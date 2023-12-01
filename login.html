@@ -16,6 +16,8 @@
 
       <!-- bootstrap css -->
       <link rel="stylesheet" href="css/bootstrap.min.css">
+     <!-- bootstrap css -->
+     <link rel="stylesheet" href="css/login.css">
       <!-- style css -->
       <link rel="stylesheet" href="css/style.css">
       <!-- estilo css -->
@@ -114,36 +116,48 @@
  </script>
 
 
-     <section class="banner_main">
+     <section class="banner_main" style="margin-top: 75px;">
+
+       <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+         <div class="container mt-5">
+           <div class="card login-card1">
+             <div class="row no-gutters">
+               <div class="col-md-5">
+                 <img src="images/login-.jpg" alt="login">
+               </div>
+               <div class="col-md-7">
+                 <div class="card-body1">
+                   <div class="brand-wrapper1">
+                     <img src="images/loguito.png" alt="logo" class="logo1">
+                   </div>
+                   <p class="login-card1-description1">Ingresa a tu cuenta</p>
+                   <form id="login">
+                     <div class="form-group">
+                       <label for="email" class="sr-only">Cue</label>
+                       <input type="email" name="cue" id="email" class="form-control" placeholder="Ingresa tu Cue">
+                     </div>
+                     <div class="form-group mb-4">
+                       <label for="password" class="sr-only">Match</label>
+                       <input type="password" name="match" id="password" class="form-control" placeholder="***********">
+                     </div>
+                     <button type="submit" class="btn btn-block login-btn1">Iniciar</button>
+                   </form>
+                   <!--<a href="#!" class="forgot-password-link1">Forgot password?</a>-->
+                   <p class="login-card-footer-text1">No tienes una cuenta? <a href="agrega.html" class="text-reset">Registrate aqui</a></p>
+                   <nav class="login-card-footer-nav1">
+                     <a href="#!">Terminos de uso.</a>
+                     <a href="#!">Politicas de privacidad</a>
+                   </nav>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </main>
+
+
 
        
-        <div class="container formu">
-           <div class="row d_flex">
-              <div class="col-md-12">
-                <form id="login" class="formulario-registro-cliente">
-
-                  <h1 class="form-label h1-form-usuario">Iniciar Sesión</h1>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Cue</label>
-                    <input type="email" name="cue" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">No compartas tu email con nadie.</div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Match</label>
-                    <input type="password" name="match" class="form-control" id="exampleInputPassword1">
-                  </div>
-                  
-
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">¿Aun no tienes una cuenta?</label>
-                    <a href="agrega.html">Registrate aqui</a>
-                  </div>
-                  
-                  <button type="submit" class="btn btn-primary">Iniciar sesion</button>
-                </form>
-              </div>
-           </div>
-        </div>
      </section>
 
      

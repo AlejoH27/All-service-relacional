@@ -19,21 +19,6 @@
 
 /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
 
-* {
-     box-sizing: border-box !important;
-}
-
-html {
-     scroll-behavior: smooth;
-}
-
-body .nav{
-     color: #dbdbdb;
-     font-size: 14px;
-     font-family: 'Raleway', sans-serif;
-     line-height: 1.80857;
-     font-weight: normal;
-}
 
 .container{
   padding-top: 20px;
@@ -108,12 +93,8 @@ body .nav{
 
 body h1{
     text-align: center;
-    color: #fff;
+    color: #000000;
 }
-
-body {
-    background: linear-gradient(90deg, rgba(134,134,134,1) 0%, rgba(34,109,143,1) 52%, rgba(155,162,163,1) 97%);
-  }
 
 
   .loader_bg {

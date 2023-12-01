@@ -10,12 +10,14 @@ function empleadoConsultaServicio()
  $con = AccesoBd::getCon();
  $stmt = $con->query(
   "SELECT
-    ID_SERVICIO AS servId,
-    TIPO_SERVICIO AS servNombre,
-    DESCRIPCION_DE_SERVICIO AS servDescripcion
-  FROM SERV
-  GROUP BY TIPO_SERVICIO
-  ORDER BY TIPO_SERVICIO"
+    s.ID_SERVICIO AS servId,
+    s.TIPO_SERVICIO AS servNombre,
+    s.DESCRIPCION_DE_SERVICIO AS servDescripcion,
+    o.TIPO_OFICIO AS servOficios
+    FROM SERV s
+    INNER JOIN OFICIOSv2 o ON s.SERV_OFICIOS_ID_OFICIOS = o.OFICIO_ID
+    GROUP BY TIPO_SERVICIO
+    ORDER BY TIPO_SERVICIO"
  );
  $resultado = $stmt->fetchAll(
   PDO::FETCH_OBJ

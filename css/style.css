@@ -40,6 +40,7 @@ body {
      font-family: 'Raleway', sans-serif;
      line-height: 1.80857;
      font-weight: normal;
+     /*margin-top: 75px;*/
 }
 
 a {
@@ -324,8 +325,8 @@ button {
 
 .banner_main {
      padding: 90px 0;
-     background: rgb(72,129,187);
-     background: radial-gradient(circle, rgba(72,129,187,1) 33%, rgba(150,150,150,1) 92%);
+     background: #faffb3;
+     background: linear-gradient(to bottom right, #faffb3, #e6e6e6);
      background-size: 100% 100%;
      background-repeat: no-repeat;
      padding-top: 20px;
@@ -557,6 +558,7 @@ button {
      position: inherit;
 }
 
+
 .testimonial_box figure {
      margin: 0;
 }
@@ -712,7 +714,7 @@ button {
 
 .contact .titlepage h2 {
      padding-bottom: 10px;
-     color: #fff;
+     color: #6b6b6b;
 }
 
 .contact .titlepage span {
@@ -725,8 +727,8 @@ button {
 
 .contact {
      padding: 90px 0;
-     background: rgb(72,129,187);
-     background: radial-gradient(circle, rgba(72,129,187,1) 33%, rgba(150,150,150,1) 92%);
+     background:  #faffb3;
+     background: linear-gradient(to bottom right, #faffb3, #e6e6e6);
 }
 
 .main_form {

@@ -5,7 +5,7 @@ require_once
 
 use srv\dao\AccesoBd;
 
-function administradorConsultaServicio()
+function administradorConsultaUsuario()
 {
  $con = AccesoBd::getCon();
  $stmt = $con->query(

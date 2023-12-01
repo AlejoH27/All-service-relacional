@@ -40,7 +40,7 @@ extends Servicio
       txtNoPermitidoAdministrador()
     );
   }
-  return "Hola " . $cue. "a tu dashboard de administrador";
+  return "Hola " . $cue. " a tu dashboard de administrador";
  }
 }
 
