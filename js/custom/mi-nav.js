@@ -155,7 +155,7 @@ export class MiNav
      return rolIds.has(ROL_CLIENTE) ?
       /* HTML */
       `<li class="nav-item">
-        <a class="nav-link" href="../servicios.html">
+        <a class="nav-link" href="../cliente-servicios.html">
         Servicios</a>
        </li>
        `

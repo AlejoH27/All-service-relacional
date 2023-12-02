@@ -1,5 +1,8 @@
 <?php
 
+require_once "srv/dao/usuAgregaServicio.php";
+require_once "srv/dao/usuVerifica.php";
+
 use srv\dao\AccesoBd;
 use srv\modelo\Servicio1;
 
@@ -28,5 +31,10 @@ function empleadoAgregaServicio(
 $modelo->id_servicio =
   $con->lastInsertId();
   //empleadoServicioAgregaOficio($modelo);
+  $id_servicio = $modelo->id_servicio;
+  $id_usuario = $modelo->iden;
+
+  usuAgregaServicio($id_usuario, $id_servicio);
+  
  $con->commit();
 }

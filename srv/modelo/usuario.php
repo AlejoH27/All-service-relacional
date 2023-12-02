@@ -43,6 +43,7 @@ class Usuario
  /** @var Rol[] */
  public array $roles;
  public array $oficio;
+ public array $servicio;
 
 /**
   public function __construct()

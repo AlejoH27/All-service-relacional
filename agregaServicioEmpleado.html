@@ -97,11 +97,17 @@
      muestraRender
     } from "../lib/js/muestraRender.js"
     import {
+     parametrosDePagina
+    } from "./lib/js/parametrosDePagina.js"
+    import {
      Sesion
     } from "../js/Sesion.js"
      import {
       ROL_EMPLEADO
      } from "../js/const/ROL_EMPLEADO.js"
+
+    const parametros =
+     parametrosDePagina()
 
      //muestra el formulario para el registro
     preparaVistaOficio()
@@ -130,7 +136,8 @@
     async function agrega(evt) {
      try {
       const m = await submit(evt,
-       "../srv/SrvEmpleadoAgregaServicio.php",
+       "../srv/SrvEmpleadoAgregaServicio.php?"
+                             + parametros,
        forma)
        saltaVistaEmpleadoServicios()
      } catch (e) {
@@ -144,6 +151,7 @@
 
     async function preparaVista() {
      try {
+       console.log("Valor de cue:", parametros.get("cue"));
       const json =
        await buscaEnElServidor()
       const sesion = new Sesion(json)

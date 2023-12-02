@@ -23,6 +23,8 @@ class Servicio1
  public string $tipo_servicio;
  public string $descripcion_de_servicio; 
  public string $serv_oficios_id_oficios;
+ public int $iden;
+
 
  function valida()
  {

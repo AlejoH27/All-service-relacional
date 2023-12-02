@@ -92,6 +92,7 @@
       import {
        parametrosDePagina
       } from "../lib/js/parametrosDePagina.js"
+      
       import {
        Sesion
       } from "../js/Sesion.js"
@@ -101,35 +102,26 @@
       import {
        ROL_EMPLEADO
       } from "../js/const/ROL_EMPLEADO.js"
+    
 
-
-      //funcion para ver a los empleados disponibles
-      preparaVistaOficio()
-
-      async function preparaVistaOficio() {
-       try {
-        const render =
-         await consultaServidor()
-        muestraRender(lista, render)
-       } catch (e) {
-        muestraError(e.message)
-       }
-      }
-
-       async function
-        consultaServidor() {
-        return await ejecuta(fetch(
-         "../srv/SrvEmpleadoConsultaServicio.php"))
-       }
-      
+      /********** Muestra la sesion actual ¨********/
       preparaVista()
 
       async function preparaVista() {
        try {
+         
         const json =
          await buscaEnElServidor()
         const sesion = new Sesion(json)
+
+         // Pasa la variable de sesión al enlace
+          const enlaceNuevo = document.querySelector("#enlaceNuevo");
+          if (enlaceNuevo) {
+             enlaceNuevo.href = `agregaServicioEmpleado.html?cue=${encodeURIComponent(sesion.cue)}`;
+          }
+         
         muestra(sesion)
+        consultaServidor(sesion.cue)
        } catch (e) {
         muestraError(e)
        }
@@ -153,6 +145,32 @@
       }
 
        /**********************************/
+      
+
+      //funcion para ver a los empleados disponibles
+      preparaVistaServicio()
+
+      async function preparaVistaServicio() {
+       try {
+        const render =
+         await consultaServidor()
+        muestraRender(lista, render)
+       } catch (e) {
+        muestraError(e.message)
+       }
+      }
+
+      async function consultaServidor(cue) {
+        try {
+          const url = `../srv/SrvEmpleadoConsultaServicio.php?cue=${encodeURIComponent(cue)}`;
+          const render = await ejecuta(fetch(url));
+          muestraRender(lista, render);
+        } catch (e) {
+          muestraError(e.message);
+        }
+      }
+
+      
 
 
      </script>
@@ -170,7 +188,9 @@
               <lista-principal></lista-principal>
             </div>
            <div class="boton-agregar">
-            <hipervinculo-agregar-servicio-empleado></hipervinculo-agregar-servicio-empleado>
+             <a id="enlaceNuevo" class="btn btn-primary">
+             Nuevo
+             </a>
            </div>
            
            </div>

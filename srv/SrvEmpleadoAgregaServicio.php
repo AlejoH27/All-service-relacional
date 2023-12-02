@@ -15,6 +15,10 @@ require_once
 require_once
  "srv/dao/empleadoAgregaServicio.php";
 require_once
+ "srv/dao/usuAgregaServicio.php";
+require_once
+ "srv/dao/usuVerifica.php";
+require_once
  "srv/dao/oficioConsulta.php";  // Asegúrate de incluir el archivo que contiene la función de consulta de oficios
 
 use \lib\php\Servicio;
@@ -27,9 +31,16 @@ class SrvEmpleadoAgregaServicio extends Servicio
       $servicio1 = new Servicio1();
       $servicio1->tipo_servicio = leeSinEspaciosInFin("tipo_servicio");
       $servicio1->descripcion_de_servicio = leeSinEspaciosInFin("descripcion_de_servicio");
-      $servicio1->serv_oficios_id_oficios = leeSinEspaciosInFin("ofcioId");
-      
+      $servicio1->serv_oficios_id_oficios = leeSinEspaciosInFin("ofcioId"); 
+
+      $cue = leeSinEspaciosInFin("cue");
+      $id_usuario = usuVerifica($cue);
+
+      $servicio1->iden = $id_usuario;
+
       empleadoAgregaServicio($servicio1);
+
+      
       return $servicio1;
     }
 }

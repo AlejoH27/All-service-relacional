@@ -10,6 +10,7 @@ class SrvEmpleadoConsultaServicio extends Servicio
     protected function implementacion()
     {
         $lista = empleadoConsultaServicio();
+
         $render = "";
 
         // Inicia la tabla y aplica un fondo blanco y texto negro
