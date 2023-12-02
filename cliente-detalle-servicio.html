@@ -82,19 +82,19 @@
     ROL_CLIENTE
    } from "./js/const/ROL_CLIENTE.js"
 
-   const parametros =
-    parametrosDePagina()
+   /*const parametros =
+    parametrosDePagina()*/
 
    //Funcion para ver la sesion
-   preparaVista()
+   preparaVistaSesion()
 
-   async function preparaVista() {
+   async function preparaVistaSesion() {
     try {
      const json =
       await buscaEnElServidor()
       //console.log("Valor de id:", parametros.get("id_servicio"));
      const sesion = new Sesion(json)
-     muestra(sesion)
+     muestraSesion(sesion)
 
     } catch (e) {
      muestraError(e)
@@ -107,7 +107,7 @@
      "srv/SrvSesion.php"))
    }
 
-   async function muestra(sesion) {
+   async function muestraSesion(sesion) {
     if (sesion.rolIds
      .has(ROL_CLIENTE)) {
      nav.sesion = sesion
@@ -116,11 +116,11 @@
     }
    }
 
-   //**********************************//
+   //**********************************/
 
    /******************* Muestra los servicios disponibles *********************/
 
-      preparaVistaServicio()
+     /* preparaVistaServicio()
 
       async function preparaVistaServicio() {
        try {
@@ -143,7 +143,27 @@
       }
 
    /***************************************************************************/
+
+   preparaVista()
+
+   async function preparaVista() {
+    try {
+     const render =
+      await consultaServidor()
+     muestraRender(lista, render)
+    } catch (e) {
+     muestraError(e)
+    }
+   }
+
+   async function
+    consultaServidor() {
+    return await ejecuta(fetch(
+     "srv/SrvProductoConsulta.php"))
+   }
+   
  </script>
+
 
 
 
@@ -151,6 +171,11 @@
 
 
     <div class="container mt-5">
+      <h1>Productos</h1>
+       <p>
+        <a href="carrito.html">
+         Ver carrito</a>
+       </p>
 
       <lista-principal></lista-principal>
 
@@ -158,6 +183,8 @@
 
   </section>
   <!--BUscador-->
+
+  
   
 
   <!--  footer -->

@@ -7,6 +7,27 @@ require_once
  "srv/dao/rolConsulta.php";
 require_once
  "srv/dao/rolAgrega.php";
+
+//Carrito
+
+require_once
+ "srv/dao/productoCuenta.php";
+require_once
+ "srv/dao/productoAgrega.php";
+require_once
+ "srv/dao/ventaCuenta.php";
+require_once
+ "srv/dao/ventaAgrega.php";
+require_once
+ "srv/txt/txtSandwich.php";
+require_once
+ "srv/txt/txtHotDog.php";
+require_once
+ "srv/txt/txtHamburguesa.php";
+
+//
+
+
 require_once "srv/txt/"
  . "txtAdministraElSistema.php";
 
@@ -29,6 +50,8 @@ use \PDO;
 use srv\modelo\Rol;
 use srv\modelo\Usuario;
 use srv\modelo\Oficio;
+use srv\modelo\Producto;
+use srv\modelo\Venta;
 
 class AccesoBd
 {
@@ -82,9 +105,6 @@ class AccesoBd
      $administrador->descripcion =
      txtAdministraElSistema();
      rolAgrega($administrador);*/
-    
-
-  
 
    $rol = new Rol();
    $rol->id = "Administrador";
@@ -100,5 +120,35 @@ class AccesoBd
    rolAgrega($rol);
     **/
   }
+
+   if (productoCuenta()=== 0) {
+
+    $producto = new Producto();
+    $producto->nombre =
+     txtSandwich();
+    $producto->existencias = 50;
+    $producto->precio = 15;
+    productoAgrega($producto);
+
+    $producto = new Producto();
+    $producto->nombre = txtHotDog();
+    $producto->existencias = 40;
+    $producto->precio = 30;
+    productoAgrega($producto);
+
+    $producto = new Producto();
+    $producto->nombre =
+     txtHamburguesa();
+    $producto->existencias = 30;
+    $producto->precio = 40;
+    productoAgrega($producto);
+   }
+   if (ventaCuenta() === 0) {
+    $venta = new Venta();
+    $venta->activa = true;
+    $venta->detalles = [];
+    ventaAgrega($venta);
+   }
+   
  }
 }
