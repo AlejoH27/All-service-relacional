@@ -15,6 +15,8 @@ function usuarioAgrega(
 ) {
  $modelo->valida();
  $con = AccesoBd::getCon();
+  
+  
  $con->beginTransaction();
  //archivoAgrega($modelo->fotografia);
  $stmt = $con->prepare(

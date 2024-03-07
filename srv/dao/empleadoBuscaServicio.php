@@ -13,11 +13,19 @@ function empleadoBuscaServicio(int $idServ)
     s.ID_SERVICIO AS id_servicio,
     s.TIPO_SERVICIO AS tipo_servicio,
     s.DESCRIPCION_DE_SERVICIO AS descripcion_de_servicio,
-    o.TIPO_OFICIO AS serv_oficios_id_oficios
-    FROM SERV s
-    INNER JOIN OFICIOSv2 o ON s.SERV_OFICIOS_ID_OFICIOS = o.OFICIO_ID
-    WHERE s.ID_SERVICIO = :idServ"
+    o.TIPO_OFICIO AS serv_oficios_id_oficios,
+    cs.COSTO AS costo
+FROM
+    SERV s
+INNER JOIN
+    OFICIOSv2 o ON s.SERV_OFICIOS_ID_OFICIOS = o.OFICIO_ID
+LEFT JOIN
+    COS_SERV cs ON s.ID_SERVICIO = cs.SERV_ID_SERV
+WHERE
+    s.ID_SERVICIO = :idServ"
         );
+
+     
 
         $stmt->execute([
             ":idServ" => $idServ
@@ -29,6 +37,8 @@ function empleadoBuscaServicio(int $idServ)
         );
 
         $servicio = $stmt->fetch();
+
+
 
         if ($servicio === false) {
             return false;

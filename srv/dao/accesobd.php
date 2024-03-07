@@ -25,6 +25,11 @@ require_once
 require_once
  "srv/txt/txtHamburguesa.php";
 
+require_once
+ "srv/dao/respuestaCuenta.php";
+require_once
+ "srv/dao/respuestaAgrega.php";
+
 //
 
 
@@ -52,6 +57,8 @@ use srv\modelo\Usuario;
 use srv\modelo\Oficio;
 use srv\modelo\Producto;
 use srv\modelo\Venta;
+use srv\modelo\Respuesta;
+
 
 class AccesoBd
 {
@@ -71,14 +78,14 @@ class AccesoBd
    function conecta(): \PDO
    {
      return new PDO(
-      // cadena de conexión
-       "mysql:host=34.41.14.117;dbname=alejo;charset=utf8",
-      "root",
-      // contraseña
-      "root",
-      [PDO::ATTR_ERRMODE =>
-      PDO::ERRMODE_EXCEPTION]
-  );
+         // cadena de conexión
+          "mysql:host=34.136.15.29;dbname=all-service;charset=utf8",
+         "root",
+         // contraseña
+         "root",
+         [PDO::ATTR_ERRMODE =>
+         PDO::ERRMODE_EXCEPTION]
+        );
   }
 
  private static
@@ -121,7 +128,7 @@ class AccesoBd
     **/
   }
 
-   if (productoCuenta()=== 0) {
+   /*if (productoCuenta()=== 0) {
 
     $producto = new Producto();
     $producto->nombre =
@@ -148,7 +155,14 @@ class AccesoBd
     $venta->activa = true;
     $venta->detalles = [];
     ventaAgrega($venta);
-   }
+   }*/
+
+   if (respuestaCuenta() === 0) {
+     $respuesta = new Respuesta();
+     $respuesta->activa = true;
+     $respuesta->detalles = [];
+     respuestaAgrega($respuesta);
+    }
    
  }
 }

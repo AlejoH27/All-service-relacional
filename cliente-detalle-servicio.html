@@ -12,7 +12,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
     <title>All service</title>
-    <meta name="keywords" content="">
+    <meta name="keywords" content=""
     <meta name="description" content="">
     <meta name="author" content="">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -51,7 +51,7 @@
 <body>
 
   <div class="loader_bg">
-     <div class="loader"><img src="images/loading.gif" alt="cargando..." /></div>
+     <div class="loader"><img src="images/carga-camion.gif" alt="cargando..." width="100px" height="100px"/></div>
   </div>
   <!-- end loader -->
   <!-- header -->
@@ -82,8 +82,8 @@
     ROL_CLIENTE
    } from "./js/const/ROL_CLIENTE.js"
 
-   /*const parametros =
-    parametrosDePagina()*/
+   const parametros =
+    parametrosDePagina()
 
    //Funcion para ver la sesion
    preparaVistaSesion()
@@ -159,7 +159,7 @@
    async function
     consultaServidor() {
     return await ejecuta(fetch(
-     "srv/SrvProductoConsulta.php"))
+     "srv/SrvClienteConsultaDetalleServicio.php?"+parametros))
    }
    
  </script>
@@ -171,11 +171,8 @@
 
 
     <div class="container mt-5">
-      <h1>Productos</h1>
-       <p>
-        <a href="carrito.html">
-         Ver carrito</a>
-       </p>
+
+      
 
       <lista-principal></lista-principal>
 

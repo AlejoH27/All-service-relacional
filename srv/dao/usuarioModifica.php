@@ -1,9 +1,9 @@
 <?php
 
-require_once
+/*require_once
  "srv/dao/usuRolAgrega.php";
 require
- "srv/dao/usuRolElimina.php";
+ "srv/dao/usuRolElimina.php";*/
 
 use srv\dao\AccesoBd;
 use srv\modelo\Usuario;
@@ -29,9 +29,9 @@ function usuarioModifica(
   "apellidoP" => $modelo->apellidoP,
   "apellidoM" => $modelo->apellidoM,
   ":cue" => $modelo->cue,
-  ":match" => $modelo->match
+  ":match" => password_hash($modelo->match, PASSWORD_DEFAULT)
  ]);
- usuRolElimina($modelo->id);
- usuRolAgrega($modelo);
+ /*usuRolElimina($modelo->id);
+ usuRolAgrega($modelo);*/
  $con->commit();
 }

@@ -43,14 +43,15 @@
     <script type="module" src="../lib/js/custom/indica-campos-obligatorios.js"></script>
     <script type="module" src="../js/custom/empleado/campo-nombre-servicio-cargando.js"></script>
     <script type="module" src="../js/custom/empleado/campo-descripcion-servicio-cargando.js"></script>
+    <script type="module" src="../js/custom/empleado/campo-costo-servicio-cargando.js"></script>
     <script type="module" src="../js/custom/empleado/campo-oficio-servicio-cargando.js"></script>
     <script type="module" src="../js/custom/mi-nav.js"></script>
 </head>
 
 <body>
-    <div class="loader_bg">
-        <div class="loader"><img src="../images/loading.gif" alt="#" /></div>
-    </div>
+  <div class="loader_bg">
+     <div class="loader"><img src="images/carga-camion.gif" alt="cargando..." width="100px" height="100px"/></div>
+  </div>
     <mi-nav id="nav" class="encabezado"></mi-nav>
 
   <section class="banner_main" style="margin-top: 75px;">
@@ -74,6 +75,10 @@
                             <hr>
                             <div class="mb-3">
                                 <campo-descripcion-servicio-cargando></campo-descripcion-servicio-cargando>
+                            </div>
+                            <hr>
+                            <div class="mb-3">
+                              <campo-costo-servicio-cargando></campo-costo-servicio-cargando>
                             </div>
                             <hr>
                             <div class="mb-3">
@@ -177,6 +182,12 @@
                 muestraTexto(forma.descripcion_de_servicio, modelo.descripcion_de_servicio);
             } else {
                 console.log("Algo pasa con el descripcion_de_servicio");
+            }
+
+            if (modelo.costo !== undefined) {
+                muestraNumero(forma.costo, modelo.costo);
+            } else {
+                console.log("Algo pasa con el costo");
             }
 
             if (modelo.serv_oficios_id_oficios !== undefined) {

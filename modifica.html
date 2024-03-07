@@ -80,7 +80,7 @@
 <body>
 
   <div class="loader_bg">
-     <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+     <div class="loader"><img src="images/carga-camion.gif" alt="cargando..." width="100px" height="100px"/></div>
   </div>
   <mi-nav id="nav" class="encabezado"></mi-nav>
   
@@ -279,6 +279,12 @@
   }
 
   function muestra(modelo) {
+    const m = modelo.match;
+    if(
+        !m === true
+      ){
+        m ="*******";
+      }
    muestraNumero(forma.id,
     modelo.id)
    muestraTexto(forma.nombre,
@@ -289,8 +295,7 @@
     modelo.apellidoM)
    muestraTexto(forma.cue,
     modelo.cue)
-   muestraTexto(forma.match,
-    modelo.match)
+   muestraTexto(forma.match, m)
   }
 
 /*************Termina vista para el formulario para modificar************/

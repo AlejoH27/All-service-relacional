@@ -10,7 +10,7 @@ class SrvOficioOpciones extends Servicio
     protected function implementacion()
     {
         $listaOficios = oficioConsulta();
-        $render = "<select class='form-select' name='ofcioIds[]' id='rolCheckbox_' multiple>";
+        $render = "<select class='form-control' name='ofcioIds[]' id='rolCheckbox_' multiple>";
 
         foreach ($listaOficios as $modelo) {
             $id = htmlentities($modelo->id_oficio);
@@ -27,5 +27,5 @@ class SrvOficioOpciones extends Servicio
 }
 
 $servicio = new SrvOficioOpciones();
-$servicio->ejecuta();
+echo $servicio->ejecuta();
 ?>

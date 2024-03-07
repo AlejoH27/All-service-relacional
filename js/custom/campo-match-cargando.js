@@ -4,7 +4,9 @@ export class CampoMatchCargando
  connectedCallback() {
   this.style.display = "block"
   this.innerHTML = /* HTML */
-   `<h6 class='mb-0'>Match: <span class='text-secondary'> <input name="match" required value="Cargando&hellip;"> </span></h6>`
+    
+   `<label for='match' class='form-label'>Borra los esteriscos antes de editar el match *</label>
+   <h6 class='mb-0'>Match: <span class='text-secondary'> <input name="match" type="password" required value="Cargando&hellip;"> </span></h6>`
  }
 
 }

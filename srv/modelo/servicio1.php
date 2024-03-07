@@ -24,6 +24,7 @@ class Servicio1
  public string $descripcion_de_servicio; 
  public string $serv_oficios_id_oficios;
  public int $iden;
+ public int $costo;
 
 
  function valida()

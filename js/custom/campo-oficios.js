@@ -7,12 +7,15 @@ export class CampoOficios
   this.style.display = "block"
   this.innerHTML = /* HTML */
    `
-   <fieldset class="border p-2">
-       <legend class="w-auto">oficios</legend>
-       <div id="oficios" class="mt-3">
-              <span class="sr-only">Cargando...</span>
+   
+       <div class="mt-3">
+           <div class="row">
+               <div id="oficios"class="col-md-12">
+                   <span class="sr-only">Cargando...</span>
+               </div>
+           </div>
        </div>
-   </fieldset>
+
    
    `
 

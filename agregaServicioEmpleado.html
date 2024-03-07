@@ -58,6 +58,9 @@
    src="../js/custom/servicio/campo-descripcion-servicio.js">
    </script>
   <script type="module"
+   src="../js/custom/servicio/campo-costo-servicio.js">
+   </script>
+  <script type="module"
    src="../js/custom/servicio/campo-seleccionar-servicio-oficio.js">
    </script>
  <script type="module"
@@ -68,7 +71,7 @@
 <body>
 
   <div class="loader_bg">
-     <div class="loader"><img src="../images/loading.gif" alt="#" /></div>
+     <div class="loader"><img src="images/carga-camion.gif" alt="cargando..." width="100px" height="100px"/></div>
   </div>
   <mi-nav id="nav" class="encabezado"></mi-nav>
   </indicador-cargando>
@@ -129,7 +132,7 @@
     async function
      descargaOficioOpciones() {
      return await ejecuta(fetch(
-      "../srv/SrvOficioOpciones.php"))
+      "../srv/SrvOficioOpcionesServicio.php?"+ parametros))
     }
 
     /** @param {Event} evt */
@@ -202,9 +205,15 @@
                               <label for="validationServer02">Descripción del servicio</label>
                               <campo-descripcion-servicio></campo-descripcion-servicio>
                           </div>
-                          <div class="col-md-12 mb-3">
-                              <campo-seleccionar-servicio-oficio></campo-seleccionar-servicio-oficio>
+                          <div class="col-md-6 mb-3">
+                            <label for="validationServer02">Costo del servicio</label>
+                            <campo-costo-servicio></campo-costo-servicio>
                           </div>
+                          <div class="col-md-12 mb-6">
+                              <campo-seleccionar-servicio-oficio></campo-seleccionar-servicio-oficio>
+                            <br>
+                          </div>
+                        
                       </div>
                       <div class="form-row">
                           <!-- Puedes agregar más campos aquí si es necesario -->

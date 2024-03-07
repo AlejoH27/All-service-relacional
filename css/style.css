@@ -35,7 +35,7 @@ html {
 }
 
 body {
-     color: #dbdbdb;
+     color: #4f4f4f;
      font-size: 14px;
      font-family: 'Raleway', sans-serif;
      line-height: 1.80857;
@@ -259,7 +259,7 @@ button {
 }
 
 .loader img {
-     width: 280px;
+     max-width: 5%;
 }
 
 
@@ -325,8 +325,8 @@ button {
 
 .banner_main {
      padding: 90px 0;
-     background: #faffb3;
-     background: linear-gradient(to bottom right, #faffb3, #e6e6e6);
+  background: rgb(179,179,179);
+  background: linear-gradient(90deg, rgba(179,179,179,1) 0%, rgba(255,250,143,1) 40%, rgba(255,250,143,1) 60%, rgba(179,179,179,1) 100%);
      background-size: 100% 100%;
      background-repeat: no-repeat;
      padding-top: 20px;
@@ -382,7 +382,7 @@ button {
 
 .text-img figure img {
      width: 100%;
-     max-width: 900px;
+     /*max-width: 400px;*/
      border: #232323 solid 14px;
      border-radius: 300px;
      float: right;   

@@ -2,6 +2,11 @@
   margin: 0px;
 }
 
+body{
+  background: rgb(179,179,179);
+  background: linear-gradient(90deg, rgba(179,179,179,1) 0%, rgba(255,250,143,1) 40%, rgba(255,250,143,1) 60%, rgba(179,179,179,1) 100%);
+}
+
 
 .logo-pagina{
   width: 200px;
@@ -274,6 +279,14 @@
 
 /****************************************/
 
+/* Estilos de la vista de solicitudes de los empleados */
+
+.solicitud-empleado{
+  background-color: #f8f9fa;
+}
+
+/****************************************/
+
 /****Estilos para tarjetas de seleccion del dashboard del administrador**/
 
 .card-img-top {
@@ -308,5 +321,25 @@
 @media (min-width: 990px) {
   .formu{
      max-width: 600px;
+    
+  }
+  
+}
+
+@media (max-width: 990px) {
+  .loader img {
+       max-width: 10%;
+  }
+}
+
+@media (max-width: 720px) {
+  .loader img {
+       max-width: 15%;
+  }
+}
+
+@media (max-width: 550px) {
+  .loader img {
+       max-width: 20%;
   }
 }

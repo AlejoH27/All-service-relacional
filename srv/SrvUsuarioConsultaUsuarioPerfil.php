@@ -28,7 +28,11 @@ class SrvUsuarioConsultaUsuarioPerfil extends Servicio
 
             $roles = $modelo->roles === null || $modelo->roles === "" ? "<em>-- Sin roles --</em>" : htmlentities($modelo->roles);
 
+            
+
             $oficio = $modelo->oficios;
+
+         
 
 
             $identificadorCue = $_GET['cue'];

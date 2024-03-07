@@ -19,6 +19,8 @@ function usuVerifica($iden) {
     // Imprime en la consola
     error_log("Resultado de la consulta: " . $id_usu);
 
+    //usuarioVerficicaOficio($id_usu);
+
     $con->commit();
 
     return $id_usu;

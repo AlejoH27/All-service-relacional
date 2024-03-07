@@ -26,6 +26,8 @@ extends Servicio
     leeSinEspaciosInFin("tipo_servicio");
   $servicio1->descripcion_de_servicio = 
     leeSinEspaciosInFin("descripcion_de_servicio");
+  $servicio1->costo =
+    leeEntero("costo");
   $servicio1->serv_oficios_id_oficios =
     leeSinEspaciosInFin("serv_oficios_id_oficios");
 

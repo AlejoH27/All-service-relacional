@@ -179,8 +179,17 @@ export class MiNav
         `
        `
      :  `
-             <a type="button" class="btn btn-outline-success nav-link mr-2" href="login.html">Iniciar sesión</a>
-             <a type="button" class="btn btn-outline-warning nav-link" href="agrega.html">Registrarse</a>
+            
+               <div class="row">
+                 <div class="col-md-6">
+                   <a type="button" class="btn btn-outline-success btn-block" href="login.html">Iniciar sesión</a>
+                 </div>
+                 <div class="col-md-6">
+                   <a type="button" class="btn btn-outline-warning btn-block" href="agrega.html">Registrarse</a>
+                 </div>
+               </div>
+            
+
 
      `
    }

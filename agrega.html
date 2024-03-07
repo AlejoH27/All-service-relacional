@@ -17,7 +17,6 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/responsive.css">
 
@@ -44,7 +43,7 @@
 
     <title>Agregar</title>
     <script type="module" src="./js/custom/mi-nav.js"></script>
-    <script type="module" src="./js/custom/checkValida.js"></script>
+    <!--<script type="module" src="./js/custom/checkValida.js"></script>-->
     <script type="module" src="./lib/js/custom/hipervinculo-cancelar-index.js"></script>
     <script type="module" src="./lib/js/custom/boton-agregar.js"></script>
     <script type="module" src="./lib/js/custom/indica-campos-obligatorios.js"></script>
@@ -56,9 +55,9 @@
 
 <body>
 
-    <div class="loader_bg">
-        <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-    </div>
+  <div class="loader_bg">
+     <div class="loader"><img src="images/carga-camion.gif" alt="cargando..." width="100px" height="100px"/></div>
+  </div>
     <mi-nav id="nav" class="encabezado"></mi-nav>
 
     <section class="banner_main">
@@ -89,113 +88,225 @@
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Registrarse como un cliente</h3>
 
+                          <style>
+                              .error {
+                                  color: red;
+                              }
+                          </style>
                           
-                          <form id="forma">
+                          <form id="forma" action="post" onsubmit="return validarFormulario(event)">
 
-                            
-                            <div class="row register-form">
-                                <div class="col-md-6">
-                                    
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nombre *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Apellido Paterno *"
-                                                name="nombre" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Apellido Materno *"
-                                                name="apellidoP" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="date" class="form-control" placeholder="Fecha de nacimiento *"
-                                                name="fecha_nac" />
-                                        </div>
-                                    
-                                </div>
-                                <div class="col-md-6">
+                              <div class="row register-form">
+                                  <div class="col-md-6">
+
+                                      <div class="form-group">
+                                          <label for="nombre">Nombre *</label>
+                                          <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre *" pattern="[A-Za-zÁ-ú ]+" title="Solo se permiten letras y espacios" required />
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label for="apellidoP">Apellido Paterno *</label>
+                                          <input type="text" id="apellidoP" name="apellidoP" class="form-control" placeholder="Apellido Paterno *" required />
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label for="apellidoM">Apellido Materno *</label>
+                                          <input type="text" id="apellidoM" name="apellidoM" class="form-control" placeholder="Apellido Materno *" required />
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label for="fecha_nac">Fecha de nacimiento *</label>
+                                          <input type="date" id="fecha_nac" name="fecha_nac" class="form-control" placeholder="Fecha de nacimiento *" required />
+                                      </div>
+
+                                  </div>
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label for="correo">Cue *</label>
+                                          <input type="email" id="correo" name="cue" class="form-control" placeholder="Cue *" required />
+                                          <span id="correoError" class="error"></span>
+                                      </div>
+
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Correo electrónico *"
-                                            name="cue" />
+                                        <label for="contrasena1">Match *</label>
+                                        <input type="password" id="contrasena1" name="match" class="form-control" placeholder="Match *" minlength="8" required />
+                                        <span id="matchError" class="error"></span>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Contraseña *"
-                                            name="match" />
-                                    </div>
-                                    <fieldset class="border p-2" hidden>
-                                        <legend class="w-auto">Roles</legend>
-                                        <div id="roles_empleados" class="mt-3">
-                                            <p>
-                                                <label style='display: flex'>
-                                                    <input type='checkbox' class='rolCheckbox' name='rolIds[]'
-                                                        id='rolCheckbox_Cliente' value='Cliente' checked>
-                                                    <span>
-                                                        <strong>Cliente</strong><br>No lo hay
-                                                    </span>
-                                                </label>
-                                            </p>
-                                        </div>
-                                    </fieldset>
-                                    <button type="submit" class="btnRegister">Registrarse</button>
-                                </div>
-                            </div>
-                            </form>
+
+                                      <fieldset class="border p-2" hidden>
+                                          <legend class="w-auto">Roles</legend>
+                                          <div id="roles_empleados" class="mt-3">
+                                              <p>
+                                                  <label style='display: flex'>
+                                                      <input type='checkbox' class='rolCheckbox' name='rolIds[]' id='rolCheckbox_Cliente' value='Cliente' checked>
+                                                      <span>
+                                                          <strong>Cliente</strong><br>No lo hay
+                                                      </span>
+                                                  </label>
+                                              </p>
+                                          </div>
+                                      </fieldset>
+                                      <button type="submit" class="btnRegister">Registrarse</button>
+                                  </div>
+                              </div>
+
+                          </form>
+
+                          <script>
+                            function validarFormulario(event) {
+                                var correo = document.getElementById("correo").value;
+                                var match = document.getElementById("contrasena1").value;
+
+                                // Validación del correo electrónico
+                                if (!validarCorreo(correo)) {
+                                    document.getElementById("correoError").innerText = "El formato del correo electrónico no es válido.";
+                                    event.preventDefault(); // Evita el envío del formulario
+                                    return false;
+                                } else {
+                                    document.getElementById("correoError").innerText = "";
+                                }
+
+                                // Validación del campo "Match"
+                                if (!validarMatch(match)) {
+                                    document.getElementById("matchError").innerText = "La contraseña debe tener al menos 8 caracteres y al menos una mayúscula.";
+                                    event.preventDefault(); // Evita el envío del formulario
+                                    return false;
+                                } else {
+                                    document.getElementById("matchError").innerText = "";
+                                }
+
+                                // Resto de la lógica de validación aquí
+
+                                // Si todo está bien, puedes permitir el envío del formulario
+                                return true;
+                            }
+
+                              function validarCorreo(correo) {
+                                  // Validar que el correo tenga una arroba y .com
+                                  var arrobaPos = correo.indexOf("@");
+                                  var puntoComPos = correo.indexOf(".com");
+
+                                  return arrobaPos > 0 && puntoComPos > arrobaPos;
+                              }
+
+                              function validarMatch(match) {
+                                  // Validar que la contraseña tenga al menos 8 caracteres y al menos una mayúscula
+                                  return match.length >= 8 && /[A-Z]/.test(match);
+                              }
+                          </script>
+
                         </div>
                         <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <h3 class="register-heading">Registrarse como un empleado</h3>
 
                           
-                          <form id="forma2">
+                          <form id="forma2" action="post" onsubmit="return validarFormulario2()">
 
-                            
-                            <div class="row register-form">
-                                <div class="col-md-6">
-                                    
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nombre *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Apellido Paterno *"
-                                                name="nombre" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Apellido Materno *"
-                                                name="apellidoP" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="date" class="form-control" placeholder="Fecha de nacimiento *"
-                                                name="fecha_nac" />
-                                        </div>
-                                    
-                                </div>
-                                <div class="col-md-6">
+                              <div class="row register-form">
+                                  <div class="col-md-6">
+
+                                      <div class="form-group">
+                                          <label for="nombre">Nombre *</label>
+                                          <input type="text" id="nombre2" name="nombre" class="form-control" placeholder="Nombre *" pattern="[A-Za-zÁ-ú ]+" title="Solo se permiten letras y espacios" required />
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label for="apellidoP">Apellido Paterno *</label>
+                                          <input type="text" id="apellidoP2" name="apellidoP" class="form-control" placeholder="Apellido Paterno *" required />
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label for="apellidoM">Apellido Materno *</label>
+                                          <input type="text" id="apellidoM2" name="apellidoM" class="form-control" placeholder="Apellido Materno *" required />
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label for="fecha_nac">Fecha de nacimiento *</label>
+                                          <input type="date" id="fecha_nac2" name="fecha_nac" class="form-control" placeholder="Fecha de nacimiento *" required />
+                                      </div>
+
+                                  </div>
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label for="correo">Cue *</label>
+                                          <input type="email" id="correo2" name="cue" class="form-control" placeholder="Cue *" required />
+                                          <span id="correoError2" class="error"></span>
+                                      </div>
+
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Correo electrónico *"
-                                            name="cue" />
+                                        <label for="contrasena2">Match *</label>
+                                        <input type="password" id="contrasena2" name="match" class="form-control" placeholder="Match *" minlength="8" required />
+                                        <span id="matchError2" class="error"></span>
                                     </div>
+
+                                      <fieldset class="border p-2" hidden>
+                                          <legend class="w-auto">Roles</legend>
+                                          <div id="roles_empleados" class="mt-3">
+                                              <p>
+                                                  <label style='display: flex'>
+                                                      <input type='checkbox' class='rolCheckbox' name='rolIds[]' id='rolCheckbox_Empleado' value='Empleado' checked>
+                                                      <span>
+                                                          <strong>Empleado</strong><br>No lo hay
+                                                      </span>
+                                                  </label>
+                                              </p>
+                                          </div>
+                                      </fieldset>
+
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Contraseña *"
-                                            name="match" />
+                                        <campo-oficios></campo-oficios>
                                     </div>
-                                    <fieldset class="border p-2" hidden>
-                                        <legend class="w-auto">Roles</legend>
-                                        <div id="roles_empleados" class="mt-3">
-                                            <p>
-                                                <label style='display: flex'>
-                                                    <input type='checkbox' class='rolCheckbox' name='rolIds[]'
-                                                        id='rolCheckbox_Empleado' value='Empleado' checked>
-                                                    <span>
-                                                        <strong>Empleado</strong><br>No lo hay
-                                                    </span>
-                                                </label>
-                                            </p>
-                                        </div>
-                                    </fieldset>
-                                    <campo-oficios></campo-oficios>
-                                    <button type="submit" class="btnRegister" value="Register">Registrarse</button>
-                                </div>
-                            </div>
-                            </form>
+                                    
+                                      <!-- Asegúrate de ajustar el nombre de la función para el segundo formulario -->
+                                      <button type="submit" class="btnRegister">Registrarse</button>
+                                  </div>
+                              </div>
+
+                          </form>
+
+                          <script>
+                              function validarFormulario2() {
+                                  var correo = document.getElementById("correo2").value;
+                                  var match = document.getElementById("contrasena2").value;
+
+                                  // Validación del correo electrónico
+                                  if (!validarCorreo(correo)) {
+                                      document.getElementById("correoError2").innerText = "El formato del correo electrónico no es válido.";
+                                      return false;
+                                  } else {
+                                      document.getElementById("correoError2").innerText = "";
+                                  }
+
+                                  // Validación del campo "Match"
+                                  if (!validarMatch(match)) {
+                                      document.getElementById("matchError2").innerText = "La contraseña debe tener al menos 8 caracteres y al menos una mayúscula.";
+                                      return false;
+                                  } else {
+                                      document.getElementById("matchError2").innerText = "";
+                                  }
+
+                                  // Resto de la lógica de validación aquí
+
+                                  // Si todo está bien, puedes enviar el formulario
+                                  //document.getElementById("forma").submit();
+                                return true;
+                                
+                              }
+
+                              function validarCorreo2(correo) {
+                                  // Validar que el correo tenga una arroba y .com
+                                  var arrobaPos = correo.indexOf("@");
+                                  var puntoComPos = correo.indexOf(".com");
+
+                                  return arrobaPos > 0 && puntoComPos > arrobaPos;
+                              }
+
+                              function validarMatch(match) {
+                                  // Validar que la contraseña tenga al menos 8 caracteres y al menos una mayúscula
+                                  return match.length >= 8 && /[A-Z]/.test(match);
+                              }
+                          </script>
+                          
                         </div>
                     </div>
                 </div>
@@ -241,7 +352,7 @@
                 const m = await submit(evt, "srv/SrvUsuarioAgregaCliente.php", forma)
                 saltaAIndex()
             } catch (e) {
-                muestraError(e.message)
+                muestraError(e)
             }
         }
 
@@ -340,7 +451,7 @@
   
   
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2020 Copyright:
+        © 2023 Copyright:
         <a class="text-white" href="https://mdbootstrap.com/">EasySoft</a>
       </div>
       <!-- Copyright -->

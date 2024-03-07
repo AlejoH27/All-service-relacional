@@ -34,6 +34,7 @@ extends Servicio
     leeSinEspaciosInFin("apellidoM");
   $usuario->cue =
    leeSinEspaciosInFin("cue");
+   
   $usuario->match =
    leeSinEspaciosInFin("match");
    
